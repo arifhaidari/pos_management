@@ -1,0 +1,81 @@
+{% load static %}
+
+<!-- jquery plugins here-->
+<script src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
+<!-- popper js -->
+<script src="{% static 'js/popper.min.js' %}"></script>
+<!-- bootstrap js -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- easing js -->
+<script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+<!-- swiper js -->
+<script src="{% static 'js/swiper.min.js' %}"></script>
+<!-- swiper js -->
+<script src="{% static 'js/masonry.pkgd.js' %}"></script>
+<!-- particles js -->
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+<!-- slick js -->
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'js/jquery.form.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/mail-script.js' %}"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+<!-- custom js -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+<!--gallery of screenshots-->
+<script>
+    /*-----------------------------------
+  * OWL CAROUSEL
+  *-----------------------------------*/
+    var $testimonialsDiv = $('.testimonials');
+    if ($testimonialsDiv.length && $.fn.owlCarousel) {
+        $testimonialsDiv.owlCarousel({
+            items: 1,
+            nav: true,
+            dots: false,
+            navText: ['<span class="ti-arrow-left"></span>', '<span class="ti-arrow-right"></span>']
+        });
+    }
+
+    var $galleryDiv = $('.img-gallery');
+    if ($galleryDiv.length && $.fn.owlCarousel) {
+        $galleryDiv.owlCarousel({
+            nav: false,
+            center: true,
+            loop: true,
+            autoplay: true,
+            dots: true,
+            navText: ['<span class="ti-arrow-left"></span>', '<span class="ti-arrow-right"></span>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 3
+                }
+            }
+        });
+    }
+</script>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#bootstrapdatatable').DataTable({
+            "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+            "iDisplayLength": 5
+        }
+        );
+    });
+</script>

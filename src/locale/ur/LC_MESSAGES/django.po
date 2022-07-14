@@ -1,0 +1,1472 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-13 21:06+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/forms.py:30 accounts/forms.py:110 accounts/forms.py:164
+msgid "Password"
+msgstr "شفر"
+
+#: accounts/forms.py:31
+msgid "Password confirmation"
+msgstr "د پټ نوم تایید"
+
+#: accounts/forms.py:55 pos/templates/pos/logs/deleted_product_detail.html:44
+#: pos/templates/pos/logs/deleted_product_detail.html:85
+#: pos/templates/pos/logs/edited_product_detail.html:43
+#: pos/templates/pos/logs/edited_product_detail.html:84
+#: pos/templates/pos/logs/edited_product_detail.html:109
+#: pos/templates/pos/logs/edited_product_detail.html:150
+#: pos/templates/pos/more/category.html:45
+#: pos/templates/pos/more/category.html:62
+#: pos/templates/pos/more/variant.html:46
+#: pos/templates/pos/more/variant.html:61
+#: pos/templates/pos/more/variant.html:87
+#: pos/templates/pos/more/variant.html:104
+#: pos/templates/pos/order/invoice.html:45
+#: pos/templates/pos/order/invoice.html:78
+#: pos/templates/pos/order/order_detail.html:227
+#: pos/templates/pos/order/order_detail.html:256
+#: pos/templates/pos/product/disabled_product.html:44
+#: pos/templates/pos/product/disabled_product.html:81
+#: pos/templates/pos/product/enabled_product.html:44
+#: pos/templates/pos/product/enabled_product.html:81
+#: pos/templates/pos/product/product_detail.html:44
+#: pos/templates/pos/return/return_detail.html:220
+#: pos/templates/pos/return/return_detail.html:249
+msgid "Name"
+msgstr "نوم"
+
+#: accounts/forms.py:104
+msgid "Username"
+msgstr "کاروونکی نوم"
+
+#: accounts/forms.py:140
+#: pos/templates/pos/user_dashboard/client_profile.html:73
+msgid "Phone Number"
+msgstr "د ټيلیفون شمیره"
+
+#: accounts/forms.py:146
+msgid "Full Name"
+msgstr "بشپړ نوم"
+
+#: accounts/forms.py:152
+msgid "Your Business (Shop, Supermarket...)"
+msgstr "تجارت - دوکان٬ سوپرمارکېټ ..."
+
+#: accounts/forms.py:158
+#: pos/templates/pos/user_dashboard/client_profile.html:91
+msgid "Address"
+msgstr "آدرس"
+
+#: accounts/forms.py:170
+msgid "Repeat Password"
+msgstr "د پټ نوم تکرار"
+
+#: accounts/templates/accounts/login_page.html:40
+#: accounts/templates/accounts/login_page.html:62
+#: accounts/templates/accounts/register_page.html:77
+#: templates/base/footer.html:44 templates/base/navbar.html:90
+msgid "Login"
+msgstr "ننوتل "
+
+#: accounts/templates/accounts/login_page.html:43
+msgid "Enter username"
+msgstr "کاروونکی نوم مو داخل کړئ"
+
+#: accounts/templates/accounts/login_page.html:48
+#: accounts/templates/accounts/register_page.html:58
+msgid "Enter password"
+msgstr "پټ نوم مو ورکړئ"
+
+#: accounts/templates/accounts/login_page.html:56
+msgid "Remember me"
+msgstr "حفظ مې کړه"
+
+#: accounts/templates/accounts/login_page.html:68
+msgid "Forgot Password?"
+msgstr "پټ نوم مو هېر شوی؟"
+
+#: accounts/templates/accounts/login_page.html:71
+msgid "have no account?"
+msgstr "هیڅ حساب نشته؟"
+
+#: accounts/templates/accounts/login_page.html:73
+#: accounts/templates/accounts/register_page.html:70
+msgid "Register"
+msgstr "ثبت کړئ"
+
+#: accounts/templates/accounts/register_page.html:35
+msgid "POS Request"
+msgstr "د POS غوښتنه"
+
+#: accounts/templates/accounts/register_page.html:38
+msgid "Enter full name"
+msgstr "بشپړ نوم داخل کړئ"
+
+#: accounts/templates/accounts/register_page.html:43
+msgid "Enter phone number"
+msgstr "د ټيلیفون شمیره مو ورکړئ"
+
+#: accounts/templates/accounts/register_page.html:48
+msgid "Enter business"
+msgstr "تجارت مو داخل کړئ"
+
+#: accounts/templates/accounts/register_page.html:53
+msgid "Enter address"
+msgstr "پته مو دلته وليکئ"
+
+#: accounts/templates/accounts/register_page.html:63
+msgid "Enter confirm password"
+msgstr "تایید شوی پټ نوم داخل کړئ"
+
+#: accounts/templates/accounts/register_page.html:75
+msgid "have account"
+msgstr "حساب شته"
+
+#: pos/templates/pos/expense/daily_expense.html:15
+msgid "Daily Expenses"
+msgstr "ورځني لګښتونه"
+
+#: pos/templates/pos/expense/daily_expense.html:19
+#: pos/templates/pos/expense/monthly_expense.html:19
+#: pos/templates/pos/logs/deleted_product_detail.html:19
+#: pos/templates/pos/logs/edited_product_detail.html:19
+#: pos/templates/pos/logs/log_list.html:19
+#: pos/templates/pos/more/category.html:19
+#: pos/templates/pos/more/notification.html:19
+#: pos/templates/pos/more/variant.html:19 pos/templates/pos/order/order.html:19
+#: pos/templates/pos/order/order_detail.html:62
+#: pos/templates/pos/product/disabled_product.html:19
+#: pos/templates/pos/product/enabled_product.html:19
+#: pos/templates/pos/product/product_detail.html:19
+#: pos/templates/pos/return/annual_return.html:19
+#: pos/templates/pos/return/monthly_return.html:19
+#: pos/templates/pos/return/return_detail.html:62
+#: pos/templates/pos/session/all_session.html:19
+#: pos/templates/pos/session/current_session.html:19
+#: pos/templates/pos/session/session_detail.html:19
+#: pos/templates/pos/user_dashboard/user_dashboard.html:30
+#: templates/base/navbar.html:31 templates/dashboard_base/navbar.html:37
+msgid "Home"
+msgstr "مخپاڼه"
+
+#: pos/templates/pos/expense/daily_expense.html:20
+#: pos/templates/pos/expense/monthly_expense.html:20
+#: pos/templates/pos/logs/log_list.html:20
+#: pos/templates/pos/more/category.html:20
+#: pos/templates/pos/more/notification.html:20
+#: pos/templates/pos/order/invoice.html:20
+#: pos/templates/pos/order/order.html:20
+#: pos/templates/pos/product/disabled_product.html:20
+#: pos/templates/pos/product/enabled_product.html:20
+#: pos/templates/pos/return/annual_return.html:20
+#: pos/templates/pos/return/monthly_return.html:20
+#: pos/templates/pos/session/all_session.html:20
+#: pos/templates/pos/user_dashboard/user_dashboard.html:26
+#: pos/templates/pos/user_dashboard/user_dashboard.html:31
+#: templates/base/footer.html:42 templates/base/navbar.html:42
+#: templates/base/navbar.html:48 templates/dashboard_base/navbar.html:108
+#: templates/dashboard_base/navbar.html:161
+msgid "Dashboard"
+msgstr "ډېشبورډ"
+
+#: pos/templates/pos/expense/daily_expense.html:37
+msgid "Expenses Of A Day"
+msgstr "ورځنی لګښت"
+
+#: pos/templates/pos/expense/daily_expense.html:44
+#: pos/templates/pos/expense/daily_expense.html:64
+#: pos/templates/pos/expense/monthly_expense.html:44
+#: pos/templates/pos/expense/monthly_expense.html:64
+msgid "What For?"
+msgstr "د څه له پاره؟"
+
+#: pos/templates/pos/expense/daily_expense.html:45
+#: pos/templates/pos/expense/daily_expense.html:65
+#: pos/templates/pos/expense/monthly_expense.html:45
+#: pos/templates/pos/expense/monthly_expense.html:65
+#: pos/templates/pos/user_dashboard/client_profile.html:121
+#: pos/templates/pos/user_dashboard/client_profile.html:144
+msgid "Amount"
+msgstr "مقدار"
+
+#: pos/templates/pos/expense/daily_expense.html:46
+#: pos/templates/pos/expense/daily_expense.html:66
+#: pos/templates/pos/expense/monthly_expense.html:46
+#: pos/templates/pos/expense/monthly_expense.html:66
+#: pos/templates/pos/session/all_session.html:44
+#: pos/templates/pos/session/all_session.html:87
+msgid "Session No"
+msgstr "د ناستې شمېر"
+
+#: pos/templates/pos/expense/daily_expense.html:47
+#: pos/templates/pos/expense/daily_expense.html:67
+#: pos/templates/pos/expense/monthly_expense.html:47
+#: pos/templates/pos/expense/monthly_expense.html:67
+#: pos/templates/pos/order/order.html:51 pos/templates/pos/order/order.html:83
+#: pos/templates/pos/return/annual_return.html:51
+#: pos/templates/pos/return/annual_return.html:82
+#: pos/templates/pos/return/monthly_return.html:51
+#: pos/templates/pos/return/monthly_return.html:82
+#: pos/templates/pos/session/current_session.html:199
+#: pos/templates/pos/session/current_session.html:235
+#: pos/templates/pos/session/session_detail.html:198
+#: pos/templates/pos/session/session_detail.html:234
+msgid "Date"
+msgstr "نېټه"
+
+#: pos/templates/pos/expense/daily_expense.html:56
+#: pos/templates/pos/expense/monthly_expense.html:56
+#: pos/templates/pos/order/order_detail.html:205
+#: pos/templates/pos/order/order_detail.html:207
+#: pos/templates/pos/return/return_detail.html:198
+#: pos/templates/pos/return/return_detail.html:200
+#: pos/templates/pos/session/all_session.html:59
+msgid "Session"
+msgstr "ناسته"
+
+#: pos/templates/pos/expense/monthly_expense.html:15
+msgid "Monthly Expenses"
+msgstr "میاشتينی لګښت"
+
+#: pos/templates/pos/expense/monthly_expense.html:37
+msgid "Expenses Of A Month"
+msgstr "میاشتني لګښتونه"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:15
+msgid "Deleted Product Details"
+msgstr "د حذف شوي محصول جزييات"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:20
+#: pos/templates/pos/logs/edited_product_detail.html:20
+#: pos/templates/pos/logs/log_list.html:15
+#: pos/templates/pos/logs/log_list.html:37
+#: pos/templates/pos/user_dashboard/user_dashboard.html:189
+#: templates/dashboard_base/navbar.html:220
+msgid "Logs"
+msgstr "يادښتونه"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:21
+#: pos/templates/pos/logs/edited_product_detail.html:21
+msgid "Log Details"
+msgstr "د انتظاري لېست جزییات"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:37
+msgid "Details Of Deleted Product"
+msgstr "د حذف شوي محصول توضیحات"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:45
+#: pos/templates/pos/logs/deleted_product_detail.html:86
+#: pos/templates/pos/logs/edited_product_detail.html:44
+#: pos/templates/pos/logs/edited_product_detail.html:85
+#: pos/templates/pos/logs/edited_product_detail.html:110
+#: pos/templates/pos/logs/edited_product_detail.html:151
+#: pos/templates/pos/product/disabled_product.html:45
+#: pos/templates/pos/product/disabled_product.html:82
+#: pos/templates/pos/product/enabled_product.html:45
+#: pos/templates/pos/product/enabled_product.html:82
+msgid "Purchase"
+msgstr "پیرودل"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:46
+#: pos/templates/pos/logs/deleted_product_detail.html:87
+#: pos/templates/pos/logs/edited_product_detail.html:45
+#: pos/templates/pos/logs/edited_product_detail.html:86
+#: pos/templates/pos/logs/edited_product_detail.html:111
+#: pos/templates/pos/logs/edited_product_detail.html:152
+#: pos/templates/pos/product/disabled_product.html:46
+#: pos/templates/pos/product/disabled_product.html:83
+#: pos/templates/pos/product/enabled_product.html:46
+#: pos/templates/pos/product/enabled_product.html:83
+#: pos/templates/pos/product/product_detail.html:56
+msgid "Price"
+msgstr "نرخ"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:47
+#: pos/templates/pos/logs/deleted_product_detail.html:88
+#: pos/templates/pos/logs/edited_product_detail.html:46
+#: pos/templates/pos/logs/edited_product_detail.html:87
+#: pos/templates/pos/logs/edited_product_detail.html:112
+#: pos/templates/pos/logs/edited_product_detail.html:153
+#: pos/templates/pos/order/order_detail.html:231
+#: pos/templates/pos/order/order_detail.html:260
+#: pos/templates/pos/product/disabled_product.html:47
+#: pos/templates/pos/product/disabled_product.html:84
+#: pos/templates/pos/product/enabled_product.html:47
+#: pos/templates/pos/product/enabled_product.html:84
+#: pos/templates/pos/return/return_detail.html:224
+#: pos/templates/pos/return/return_detail.html:253
+msgid "Quantity"
+msgstr "شمېر"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:48
+#: pos/templates/pos/logs/deleted_product_detail.html:89
+#: pos/templates/pos/logs/edited_product_detail.html:47
+#: pos/templates/pos/logs/edited_product_detail.html:88
+#: pos/templates/pos/logs/edited_product_detail.html:113
+#: pos/templates/pos/logs/edited_product_detail.html:154
+msgid "Enabled?"
+msgstr "فعال شوی؟"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:49
+#: pos/templates/pos/logs/deleted_product_detail.html:90
+#: pos/templates/pos/logs/edited_product_detail.html:48
+#: pos/templates/pos/logs/edited_product_detail.html:89
+#: pos/templates/pos/logs/edited_product_detail.html:114
+#: pos/templates/pos/logs/edited_product_detail.html:155
+msgid "Barcode"
+msgstr "بارکوډ"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:50
+#: pos/templates/pos/logs/deleted_product_detail.html:91
+#: pos/templates/pos/logs/edited_product_detail.html:49
+#: pos/templates/pos/logs/edited_product_detail.html:90
+#: pos/templates/pos/logs/edited_product_detail.html:115
+#: pos/templates/pos/logs/edited_product_detail.html:156
+#: pos/templates/pos/product/disabled_product.html:48
+#: pos/templates/pos/product/disabled_product.html:85
+#: pos/templates/pos/product/enabled_product.html:48
+#: pos/templates/pos/product/enabled_product.html:85
+#: pos/templates/pos/product/product_detail.html:68
+msgid "Weight"
+msgstr "وزن"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:51
+#: pos/templates/pos/logs/deleted_product_detail.html:92
+#: pos/templates/pos/logs/edited_product_detail.html:50
+#: pos/templates/pos/logs/edited_product_detail.html:91
+#: pos/templates/pos/logs/edited_product_detail.html:116
+#: pos/templates/pos/logs/edited_product_detail.html:157
+#: pos/templates/pos/order/order_detail.html:232
+#: pos/templates/pos/order/order_detail.html:261
+#: pos/templates/pos/product/disabled_product.html:49
+#: pos/templates/pos/product/disabled_product.html:86
+#: pos/templates/pos/product/enabled_product.html:49
+#: pos/templates/pos/product/enabled_product.html:86
+#: pos/templates/pos/return/return_detail.html:225
+#: pos/templates/pos/return/return_detail.html:254
+msgid "Variant(s)"
+msgstr "ډولونه"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:65
+#: pos/templates/pos/logs/deleted_product_detail.html:74
+#: pos/templates/pos/logs/edited_product_detail.html:64
+#: pos/templates/pos/logs/edited_product_detail.html:73
+#: pos/templates/pos/logs/edited_product_detail.html:130
+#: pos/templates/pos/logs/edited_product_detail.html:139
+#: pos/templates/pos/more/notification.html:59
+#: pos/templates/pos/order/order_detail.html:245
+#: pos/templates/pos/product/disabled_product.html:70
+#: pos/templates/pos/product/enabled_product.html:70
+#: pos/templates/pos/return/return_detail.html:238
+#: pos/templates/pos/session/all_session.html:76
+#: pos/templates/pos/user_dashboard/client_profile.html:47
+msgid "Yes"
+msgstr "هو"
+
+#: pos/templates/pos/logs/deleted_product_detail.html:67
+#: pos/templates/pos/logs/deleted_product_detail.html:76
+#: pos/templates/pos/logs/edited_product_detail.html:66
+#: pos/templates/pos/logs/edited_product_detail.html:75
+#: pos/templates/pos/logs/edited_product_detail.html:132
+#: pos/templates/pos/logs/edited_product_detail.html:141
+#: pos/templates/pos/more/notification.html:61
+#: pos/templates/pos/order/order_detail.html:247
+#: pos/templates/pos/product/disabled_product.html:72
+#: pos/templates/pos/product/enabled_product.html:72
+#: pos/templates/pos/return/return_detail.html:240
+#: pos/templates/pos/session/all_session.html:78
+#: pos/templates/pos/user_dashboard/client_profile.html:47
+msgid "No"
+msgstr "نه"
+
+#: pos/templates/pos/logs/edited_product_detail.html:15
+msgid "Edited Product Details"
+msgstr "ایدیت شوی محصول توضیحات"
+
+#: pos/templates/pos/logs/edited_product_detail.html:36
+msgid "Details of product before editing"
+msgstr "د تصحیح دمخه د محصول توضیحات"
+
+#: pos/templates/pos/logs/edited_product_detail.html:102
+msgid "Details of product after editing"
+msgstr "د تصحیح وروسته د محصول توضیحات"
+
+#: pos/templates/pos/logs/log_list.html:44
+#: pos/templates/pos/logs/log_list.html:56
+#: pos/templates/pos/logs/log_list.html:60
+#: pos/templates/pos/logs/log_list.html:64
+#: pos/templates/pos/logs/log_list.html:68
+#: pos/templates/pos/logs/log_list.html:71
+#: pos/templates/pos/logs/log_list.html:83
+msgid "Log"
+msgstr "يادښت "
+
+#: pos/templates/pos/logs/log_list.html:45
+#: pos/templates/pos/logs/log_list.html:84
+msgid "Model"
+msgstr "ماډل"
+
+#: pos/templates/pos/logs/log_list.html:46
+#: pos/templates/pos/logs/log_list.html:85
+#: pos/templates/pos/more/notification.html:46
+#: pos/templates/pos/more/notification.html:73
+msgid "Detail"
+msgstr "جزييات"
+
+#: pos/templates/pos/logs/log_list.html:47
+#: pos/templates/pos/logs/log_list.html:86
+#: pos/templates/pos/more/notification.html:48
+#: pos/templates/pos/more/notification.html:75
+#: pos/templates/pos/order/order_detail.html:130
+#: pos/templates/pos/order/order_detail.html:199
+#: pos/templates/pos/return/return_detail.html:130
+#: pos/templates/pos/return/return_detail.html:192
+msgid "Datetime"
+msgstr "زمان"
+
+#: pos/templates/pos/more/category.html:15
+#: pos/templates/pos/user_dashboard/user_dashboard.html:127
+#: templates/dashboard_base/navbar.html:315
+msgid "Categories"
+msgstr "ډلبندۍ"
+
+#: pos/templates/pos/more/category.html:37
+msgid "List Of Categories"
+msgstr "د ډلبندیو لېست"
+
+#: pos/templates/pos/more/category.html:44
+#: pos/templates/pos/more/category.html:61
+#: pos/templates/pos/more/variant.html:45
+#: pos/templates/pos/more/variant.html:60
+#: pos/templates/pos/more/variant.html:86
+#: pos/templates/pos/more/variant.html:103
+msgid "ID"
+msgstr "شمېره"
+
+#: pos/templates/pos/more/category.html:46
+#: pos/templates/pos/more/category.html:63
+msgid "Include In Drawer?"
+msgstr "په جابه کې یې داخل کړئ؟"
+
+#: pos/templates/pos/more/category.html:52
+msgid "Category"
+msgstr "کټګورۍ"
+
+#: pos/templates/pos/more/notification.html:15
+#: pos/templates/pos/user_dashboard/user_dashboard.html:157
+#: templates/dashboard_base/navbar.html:309
+msgid "Notifications"
+msgstr "خبرتیاوې"
+
+#: pos/templates/pos/more/notification.html:37
+msgid "List Of All Notifications"
+msgstr "د ټولو خبرتیاوو لېست"
+
+#: pos/templates/pos/more/notification.html:44
+#: pos/templates/pos/more/notification.html:71
+msgid "Notification#"
+msgstr "پیغام"
+
+#: pos/templates/pos/more/notification.html:45
+#: pos/templates/pos/more/notification.html:72
+msgid "Subject"
+msgstr "موضوع"
+
+#: pos/templates/pos/more/notification.html:47
+#: pos/templates/pos/more/notification.html:74
+msgid "Seen?"
+msgstr "لیدل؟"
+
+#: pos/templates/pos/more/notification.html:54
+msgid "Notification"
+msgstr "خبرتیا"
+
+#: pos/templates/pos/more/variant.html:15
+#: pos/templates/pos/more/variant.html:37
+#: templates/dashboard_base/navbar.html:321
+msgid "Variants"
+msgstr "ډولونه"
+
+#: pos/templates/pos/more/variant.html:20
+#: pos/templates/pos/more/variant.html:52
+#: pos/templates/pos/more/variant.html:88
+#: pos/templates/pos/more/variant.html:105
+msgid "Variant"
+msgstr "متغیر"
+
+#: pos/templates/pos/more/variant.html:78
+msgid "Options"
+msgstr "غوراوي"
+
+#: pos/templates/pos/more/variant.html:94
+msgid "Option"
+msgstr "غوراوي"
+
+#: pos/templates/pos/order/invoice.html:15
+#: pos/templates/pos/user_dashboard/user_dashboard.html:219
+#: templates/dashboard_base/navbar.html:209
+msgid "Invoices"
+msgstr "رسیدونه"
+
+#: pos/templates/pos/order/invoice.html:19
+msgid " Home"
+msgstr "مخپاڼه"
+
+#: pos/templates/pos/order/invoice.html:37
+msgid "List Of All Invoices"
+msgstr "د ټولو رسیدونو لیست"
+
+#: pos/templates/pos/order/invoice.html:44
+#: pos/templates/pos/order/invoice.html:77
+msgid "Invoice#"
+msgstr "رسید"
+
+#: pos/templates/pos/order/invoice.html:46
+#: pos/templates/pos/order/invoice.html:79
+#: pos/templates/pos/order/order.html:45 pos/templates/pos/order/order.html:77
+#: pos/templates/pos/order/order_detail.html:228
+#: pos/templates/pos/order/order_detail.html:257
+#: pos/templates/pos/return/annual_return.html:47
+#: pos/templates/pos/return/annual_return.html:78
+#: pos/templates/pos/return/monthly_return.html:47
+#: pos/templates/pos/return/monthly_return.html:78
+#: pos/templates/pos/return/return_detail.html:221
+#: pos/templates/pos/return/return_detail.html:250
+#: pos/templates/pos/session/current_session.html:195
+#: pos/templates/pos/session/current_session.html:231
+#: pos/templates/pos/session/session_detail.html:194
+#: pos/templates/pos/session/session_detail.html:230
+msgid "Subtotal"
+msgstr "فرعی ټولټال"
+
+#: pos/templates/pos/order/invoice.html:47
+#: pos/templates/pos/order/invoice.html:80
+#: pos/templates/pos/order/order.html:46 pos/templates/pos/order/order.html:78
+#: pos/templates/pos/order/order_detail.html:168
+#: pos/templates/pos/order/order_detail.html:229
+#: pos/templates/pos/order/order_detail.html:258
+#: pos/templates/pos/return/return_detail.html:222
+#: pos/templates/pos/return/return_detail.html:251
+#: pos/templates/pos/session/current_session.html:196
+#: pos/templates/pos/session/current_session.html:232
+#: pos/templates/pos/session/session_detail.html:195
+#: pos/templates/pos/session/session_detail.html:231
+msgid "Discount"
+msgstr "تخفیف"
+
+#: pos/templates/pos/order/invoice.html:48
+#: pos/templates/pos/order/invoice.html:81
+#: pos/templates/pos/order/order.html:47 pos/templates/pos/order/order.html:79
+#: pos/templates/pos/order/order_detail.html:100
+#: pos/templates/pos/order/order_detail.html:174
+#: pos/templates/pos/order/order_detail.html:230
+#: pos/templates/pos/order/order_detail.html:259
+#: pos/templates/pos/return/return_detail.html:223
+#: pos/templates/pos/return/return_detail.html:252
+#: pos/templates/pos/session/current_session.html:197
+#: pos/templates/pos/session/current_session.html:233
+#: pos/templates/pos/session/session_detail.html:196
+#: pos/templates/pos/session/session_detail.html:232
+msgid "Net Total"
+msgstr "خالص ټولټال"
+
+#: pos/templates/pos/order/invoice.html:49
+#: pos/templates/pos/order/invoice.html:82
+msgid "Paid"
+msgstr "تادیه شوې"
+
+#: pos/templates/pos/order/invoice.html:50
+#: pos/templates/pos/order/invoice.html:83
+#: pos/templates/pos/user_dashboard/client_profile.html:123
+#: pos/templates/pos/user_dashboard/client_profile.html:146
+msgid "Remaining"
+msgstr "پاتې شوی"
+
+#: pos/templates/pos/order/invoice.html:51
+#: pos/templates/pos/order/invoice.html:84
+msgid "Issue Date"
+msgstr "د صدور نېټه"
+
+#: pos/templates/pos/order/invoice.html:52
+#: pos/templates/pos/order/invoice.html:85
+msgid "Due Date"
+msgstr "د اعتبار نېټه"
+
+#: pos/templates/pos/order/invoice.html:60
+#: pos/templates/pos/session/current_session.html:209
+#: pos/templates/pos/session/session_detail.html:208
+msgid "Invoice"
+msgstr "انوائس"
+
+#: pos/templates/pos/order/order.html:15
+#: pos/templates/pos/order/order_detail.html:63
+#: pos/templates/pos/user_dashboard/user_dashboard.html:174
+#: templates/dashboard_base/navbar.html:195
+#: templates/dashboard_base/navbar.html:203
+msgid "Orders"
+msgstr "غوښتنې"
+
+#: pos/templates/pos/order/order.html:37
+msgid "All Orders Of Today"
+msgstr "د نن ورځې ټولې غوښتنې"
+
+#: pos/templates/pos/order/order.html:44 pos/templates/pos/order/order.html:60
+#: pos/templates/pos/order/order.html:76
+#: pos/templates/pos/session/current_session.html:194
+#: pos/templates/pos/session/current_session.html:212
+#: pos/templates/pos/session/current_session.html:230
+#: pos/templates/pos/session/session_detail.html:193
+#: pos/templates/pos/session/session_detail.html:211
+#: pos/templates/pos/session/session_detail.html:229
+msgid "Order"
+msgstr "غوښتنې"
+
+#: pos/templates/pos/order/order.html:48 pos/templates/pos/order/order.html:80
+#: pos/templates/pos/order/order_detail.html:156
+#: pos/templates/pos/return/annual_return.html:48
+#: pos/templates/pos/return/annual_return.html:79
+#: pos/templates/pos/return/monthly_return.html:48
+#: pos/templates/pos/return/monthly_return.html:79
+#: pos/templates/pos/return/return_detail.html:156
+#: pos/templates/pos/session/current_session.html:198
+#: pos/templates/pos/session/current_session.html:234
+#: pos/templates/pos/session/session_detail.html:197
+#: pos/templates/pos/session/session_detail.html:233
+msgid "Item No"
+msgstr "د توکي شمېره"
+
+#: pos/templates/pos/order/order.html:49 pos/templates/pos/order/order.html:81
+msgid "Cash Collected"
+msgstr "ترلاسه شوي نغدې"
+
+#: pos/templates/pos/order/order.html:50 pos/templates/pos/order/order.html:82
+#: pos/templates/pos/order/order_detail.html:120
+#: pos/templates/pos/order/order_detail.html:186
+#: pos/templates/pos/return/annual_return.html:50
+#: pos/templates/pos/return/annual_return.html:81
+#: pos/templates/pos/return/monthly_return.html:50
+#: pos/templates/pos/return/monthly_return.html:81
+#: pos/templates/pos/return/return_detail.html:120
+#: pos/templates/pos/return/return_detail.html:186
+msgid "Change Due"
+msgstr "د بدلون اعتبار"
+
+#: pos/templates/pos/order/order_detail.html:58
+#: pos/templates/pos/order/order_detail.html:64
+msgid "Order Details"
+msgstr "د غوښتنو جزییات"
+
+#: pos/templates/pos/order/order_detail.html:80
+#: pos/templates/pos/order/order_detail.html:162
+msgid "Order Subtotal"
+msgstr "د غوښتنو فرعي ټولټال"
+
+#: pos/templates/pos/order/order_detail.html:90
+msgid "Order Discount"
+msgstr "د غوښتنو تخفیف"
+
+#: pos/templates/pos/order/order_detail.html:110
+#: pos/templates/pos/order/order_detail.html:180
+msgid "Collected Cash"
+msgstr "ترلاسه شوي نغدي"
+
+#: pos/templates/pos/order/order_detail.html:152
+#: pos/templates/pos/product/product_detail.html:40
+#: pos/templates/pos/return/return_detail.html:152
+#: pos/templates/pos/session/current_session.html:113
+#: pos/templates/pos/session/session_detail.html:114
+#: pos/templates/pos/user_dashboard/client_profile.html:69
+msgid "More Info"
+msgstr "نور معلومات"
+
+#: pos/templates/pos/order/order_detail.html:192
+#: pos/templates/pos/session/current_session.html:141
+#: pos/templates/pos/session/session_detail.html:142
+#: pos/templates/pos/user_dashboard/annual_profit_chart.html:64
+msgid "Profit"
+msgstr "ګټه"
+
+#: pos/templates/pos/order/order_detail.html:220
+#: pos/templates/pos/return/return_detail.html:213
+msgid "Order Items"
+msgstr "غوښتل شوي توکي"
+
+#: pos/templates/pos/product/disabled_product.html:15
+msgid "Disabled Products"
+msgstr "ناتوان محصولات"
+
+#: pos/templates/pos/product/disabled_product.html:37
+msgid "Following Products Are Not In Shopping Process"
+msgstr "لاندې محصولات د پیرود پروسې کې ندي"
+
+#: pos/templates/pos/product/enabled_product.html:15
+msgid "Enabled Products"
+msgstr "فعال محصولات"
+
+#: pos/templates/pos/product/enabled_product.html:37
+msgid "Following Products Are In Shopping Process"
+msgstr "لاندې محصولات د پیرود پروسې کې دي"
+
+#: pos/templates/pos/product/product_detail.html:15
+#: pos/templates/pos/product/product_detail.html:21
+msgid "Product Details"
+msgstr "د محصول جزییات"
+
+#: pos/templates/pos/product/product_detail.html:20
+#: pos/templates/pos/user_dashboard/user_dashboard.html:112
+#: templates/dashboard_base/navbar.html:171
+msgid "Products"
+msgstr "محصولات"
+
+#: pos/templates/pos/product/product_detail.html:50
+msgid "Purchase Price"
+msgstr "د پېرود نرخ"
+
+#: pos/templates/pos/product/product_detail.html:62
+#: pos/templates/pos/product/product_detail.html:82
+msgid "In Stock"
+msgstr "په ګدام کې"
+
+#: pos/templates/pos/product/product_detail.html:74
+msgid "Stock Status"
+msgstr "د ګدام حالت"
+
+#: pos/templates/pos/product/product_detail.html:78
+msgid "Low of Stock"
+msgstr "ذخيره شوي توکي لږ دي"
+
+#: pos/templates/pos/product/product_detail.html:80
+msgid "Out of Stock"
+msgstr "پلورل شوي دي"
+
+#: pos/templates/pos/product/product_detail.html:95
+msgid "Product Variants"
+msgstr "د محصول ډولونه"
+
+#: pos/templates/pos/product/product_detail.html:103
+#: pos/templates/pos/product/product_detail.html:123
+msgid "Variant Name"
+msgstr "متغیر نوم"
+
+#: pos/templates/pos/product/product_detail.html:104
+#: pos/templates/pos/product/product_detail.html:124
+msgid "Option Name"
+msgstr "د غوراوي نوم"
+
+#: pos/templates/pos/product/product_detail.html:105
+#: pos/templates/pos/product/product_detail.html:125
+msgid "Extra Price"
+msgstr "اضافي بیه"
+
+#: pos/templates/pos/return/annual_return.html:15
+msgid "Annual Returns"
+msgstr "راګرځېدلي کلنۍ توکي"
+
+#: pos/templates/pos/return/annual_return.html:37
+msgid "Returns Of A Year"
+msgstr "د يوه کال په اوږدو کې راګرځېدلي توکي"
+
+#: pos/templates/pos/return/annual_return.html:44
+#: pos/templates/pos/return/annual_return.html:59
+#: pos/templates/pos/return/annual_return.html:75
+#: pos/templates/pos/return/monthly_return.html:44
+#: pos/templates/pos/return/monthly_return.html:59
+#: pos/templates/pos/return/monthly_return.html:75
+#: pos/templates/pos/session/current_session.html:214
+#: pos/templates/pos/session/session_detail.html:213
+msgid "Return"
+msgstr "واپس"
+
+#: pos/templates/pos/return/annual_return.html:45
+#: pos/templates/pos/return/annual_return.html:76
+#: pos/templates/pos/return/monthly_return.html:45
+#: pos/templates/pos/return/monthly_return.html:76
+#: pos/templates/pos/return/return_detail.html:80
+msgid "Returned Amount"
+msgstr "واپس شوی مبلغ"
+
+#: pos/templates/pos/return/annual_return.html:46
+#: pos/templates/pos/return/annual_return.html:77
+#: pos/templates/pos/return/monthly_return.html:46
+#: pos/templates/pos/return/monthly_return.html:77
+msgid "Charged"
+msgstr "پلورل شوی"
+
+#: pos/templates/pos/return/annual_return.html:49
+#: pos/templates/pos/return/annual_return.html:80
+#: pos/templates/pos/return/monthly_return.html:49
+#: pos/templates/pos/return/monthly_return.html:80
+msgid "Cash Paid"
+msgstr "نغد پرداخت"
+
+#: pos/templates/pos/return/monthly_return.html:15
+msgid "Monthly Returns"
+msgstr "میاشتني راګرځېدل شوي توکي"
+
+#: pos/templates/pos/return/monthly_return.html:37
+msgid "Returns Of A Month"
+msgstr "د يوې مياشتې راګرځېدل شوي توکي"
+
+#: pos/templates/pos/return/return_detail.html:58
+msgid "Return Details"
+msgstr "د راګرځېدل شويو توکو جزییات"
+
+#: pos/templates/pos/return/return_detail.html:63
+#: pos/templates/pos/user_dashboard/user_dashboard.html:206
+#: templates/dashboard_base/navbar.html:277
+msgid "Returns"
+msgstr "واپس"
+
+#: pos/templates/pos/return/return_detail.html:64
+msgid "Return Detail"
+msgstr "د راګرځېدل شويو توکو جزییات"
+
+#: pos/templates/pos/return/return_detail.html:90
+#: pos/templates/pos/return/return_detail.html:168
+msgid "Charged Amount"
+msgstr "جارج شوی مبلغ"
+
+#: pos/templates/pos/return/return_detail.html:100
+#: pos/templates/pos/return/return_detail.html:174
+msgid "Returned Subtotal"
+msgstr "د راګرځېدونکو توکو فرعي ټولټال"
+
+#: pos/templates/pos/return/return_detail.html:110
+#: pos/templates/pos/return/return_detail.html:180
+msgid "Paid Cash"
+msgstr "نغد پرداخت"
+
+#: pos/templates/pos/return/return_detail.html:162
+msgid "Return Amount"
+msgstr "واپس شوی مبلغ"
+
+#: pos/templates/pos/session/all_session.html:15
+msgid "Monthly Sessions"
+msgstr "میاشتنۍ ناستې"
+
+#: pos/templates/pos/session/all_session.html:37
+msgid "Sessions Of A Month"
+msgstr "د یوې میاشتې غونډې"
+
+#: pos/templates/pos/session/all_session.html:45
+#: pos/templates/pos/session/all_session.html:88
+#: pos/templates/pos/session/current_session.html:58
+#: pos/templates/pos/session/session_detail.html:59
+msgid "Opening Balance"
+msgstr "د بېلانس پیل"
+
+#: pos/templates/pos/session/all_session.html:46
+#: pos/templates/pos/session/all_session.html:89
+#: pos/templates/pos/session/current_session.html:42
+#: pos/templates/pos/session/session_detail.html:43
+msgid "Opening Time"
+msgstr "د پیل نېټه"
+
+#: pos/templates/pos/session/all_session.html:47
+#: pos/templates/pos/session/all_session.html:90
+#: pos/templates/pos/session/current_session.html:90
+#: pos/templates/pos/session/session_detail.html:91
+msgid "Closing Balance"
+msgstr "اخېري بېلانس"
+
+#: pos/templates/pos/session/all_session.html:48
+#: pos/templates/pos/session/all_session.html:92
+#: pos/templates/pos/session/current_session.html:123
+#: pos/templates/pos/session/session_detail.html:124
+msgid "Order No"
+msgstr "د غوښتنې شمېره"
+
+#: pos/templates/pos/session/all_session.html:49
+#: pos/templates/pos/session/current_session.html:135
+#: pos/templates/pos/session/session_detail.html:136
+#: pos/templates/pos/user_dashboard/annual_net_revenue_chart.html:41
+#: pos/templates/pos/user_dashboard/annual_profit_chart.html:42
+#: pos/templates/pos/user_dashboard/user_dashboard.html:50
+msgid "Net Revenue"
+msgstr "خالص عاید"
+
+#: pos/templates/pos/session/all_session.html:50
+#: pos/templates/pos/session/all_session.html:93
+#: pos/templates/pos/session/current_session.html:154
+#: pos/templates/pos/session/session_detail.html:155
+msgid "Drawer Status"
+msgstr "دراز حالت"
+
+#: pos/templates/pos/session/all_session.html:51
+#: pos/templates/pos/session/all_session.html:94
+msgid "Comment"
+msgstr "څرګندونه"
+
+#: pos/templates/pos/session/all_session.html:69
+#: pos/templates/pos/session/current_session.html:158
+#: pos/templates/pos/session/session_detail.html:159
+msgid "Smooth"
+msgstr "نورمال"
+
+#: pos/templates/pos/session/all_session.html:71
+#: pos/templates/pos/session/current_session.html:160
+#: pos/templates/pos/session/session_detail.html:161
+msgid "Low"
+msgstr "کم"
+
+#: pos/templates/pos/session/all_session.html:91
+#: pos/templates/pos/session/current_session.html:74
+#: pos/templates/pos/session/session_detail.html:75
+msgid "Closing Time"
+msgstr "د اخېري بېلانس وخت"
+
+#: pos/templates/pos/session/current_session.html:15
+#: pos/templates/pos/session/current_session.html:21
+msgid "Recent Session"
+msgstr "وروستۍ ناسته"
+
+#: pos/templates/pos/session/current_session.html:20
+#: pos/templates/pos/session/session_detail.html:20
+#: pos/templates/pos/user_dashboard/user_dashboard.html:95
+#: templates/dashboard_base/navbar.html:253
+msgid "Sessions"
+msgstr "ناستې"
+
+#: pos/templates/pos/session/current_session.html:47
+#: pos/templates/pos/session/current_session.html:63
+#: pos/templates/pos/session/current_session.html:79
+#: pos/templates/pos/session/current_session.html:95
+#: pos/templates/pos/session/session_detail.html:48
+#: pos/templates/pos/session/session_detail.html:64
+#: pos/templates/pos/session/session_detail.html:80
+#: pos/templates/pos/session/session_detail.html:96
+msgid "More info"
+msgstr "نور معلومات"
+
+#: pos/templates/pos/session/current_session.html:117
+#: pos/templates/pos/session/session_detail.html:118
+msgid "Session#"
+msgstr "ناسته"
+
+#: pos/templates/pos/session/current_session.html:129
+#: pos/templates/pos/session/session_detail.html:130
+msgid "Session Discount"
+msgstr "د ناستې تخفیف"
+
+#: pos/templates/pos/session/current_session.html:148
+#: pos/templates/pos/session/session_detail.html:149
+msgid "Session Expense(s)"
+msgstr "د ناستې لګښت"
+
+#: pos/templates/pos/session/current_session.html:166
+#: pos/templates/pos/session/session_detail.html:167
+msgid "Session Comment"
+msgstr "د ناستې توضیح"
+
+#: pos/templates/pos/session/current_session.html:172
+#: pos/templates/pos/session/session_detail.html:173
+msgid "There is no comment in this session"
+msgstr "پدې ناسته کې نظر نشته"
+
+#: pos/templates/pos/session/current_session.html:187
+msgid "Recent Session Orders"
+msgstr "د غونډې وروستۍ سپارښتنې"
+
+#: pos/templates/pos/session/session_detail.html:15
+#: pos/templates/pos/session/session_detail.html:21
+msgid "Session Details"
+msgstr "د ناستې جزييات"
+
+#: pos/templates/pos/session/session_detail.html:186
+msgid "Session Orders"
+msgstr "د غونډې احکام"
+
+#: pos/templates/pos/user_dashboard/annual_net_revenue_chart.html:52
+#: pos/templates/pos/user_dashboard/annual_profit_chart.html:53
+#: pos/templates/pos/user_dashboard/user_dashboard.html:82
+#: templates/dashboard_base/navbar.html:229
+msgid "Expenses"
+msgstr "لګښت"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:15
+msgid "User Detail"
+msgstr "د کارونکي معلومات"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:47
+msgid "Active"
+msgstr "فعال"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:50
+#: pos/templates/pos/user_dashboard/client_profile.html:124
+#: pos/templates/pos/user_dashboard/client_profile.html:147
+msgid "Start Contract At"
+msgstr "د تړون پیل"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:53
+#: pos/templates/pos/user_dashboard/client_profile.html:125
+#: pos/templates/pos/user_dashboard/client_profile.html:148
+msgid "End Contract At"
+msgstr "اړیکه"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:57
+msgid "Activated"
+msgstr "فعال شوی"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:59
+msgid "Deactivated"
+msgstr "غیر فعال شوی"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:79
+msgid "Email"
+msgstr "ایمیل"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:85
+msgid "Fee Amount"
+msgstr "مقدار"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:97
+msgid "Register Date"
+msgstr "د ثبت تاریخ"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:122
+#: pos/templates/pos/user_dashboard/client_profile.html:145
+msgid "Paid Amount"
+msgstr "ادا شوې اندازه"
+
+#: pos/templates/pos/user_dashboard/client_profile.html:126
+#: pos/templates/pos/user_dashboard/client_profile.html:149
+msgid "Paid Date"
+msgstr "ادا شوې تاریخ"
+
+#: pos/templates/pos/user_dashboard/user_dashboard.html:65
+msgid "Daily Expense"
+msgstr "ورځنی لګښت"
+
+#: pos/templates/pos/user_dashboard/user_dashboard.html:144
+msgid "Revenue"
+msgstr "عاید"
+
+#: pos/templates/pos/user_dashboard/user_dashboard.html:245
+msgid "Top Sales Products (Net Revenue)"
+msgstr "غوره پلور - خالص عاید"
+
+#: pos/templates/pos/user_dashboard/user_dashboard.html:270
+msgid "Top Sales Products (Quantity)"
+msgstr "غوره پلور - مقدار"
+
+#: pos/templates/pos/user_dashboard/user_dashboard.html:296
+msgid "Net Revenue & Expenses"
+msgstr "خالص عایداو لګښتونه"
+
+#: pos/templates/pos/user_dashboard/user_dashboard.html:321
+msgid "Net Revenue, Expenses & Profit"
+msgstr "خالص عاید٬ لګښتونه او ګټه"
+
+#: pos_management/forms.py:12
+msgid "Enter Your Name"
+msgstr "خپل نوم وليکئ"
+
+#: pos_management/forms.py:25
+msgid "Enter Subject"
+msgstr "موضوع وليکئ"
+
+#: pos_management/forms.py:38
+msgid "Enter Email Address"
+msgstr "د برېښنالیک ادرس مو وليکئ"
+
+#: pos_management/forms.py:50
+msgid "Enter Message"
+msgstr "پيغام ولیکئ"
+
+#: pricing/templates/pricing/pricing_page.html:16
+msgid "Pricing Plan"
+msgstr "د نرخ پلان"
+
+#: pricing/templates/pricing/pricing_page.html:17
+#: templates/contact_page.html:18 templates/feature_page.html:15
+msgid "home"
+msgstr "مخپاڼه"
+
+#: pricing/templates/pricing/pricing_page.html:17 templates/base/footer.html:53
+#: templates/base/navbar.html:37
+msgid "Pricing"
+msgstr "نرخونه"
+
+#: pricing/templates/pricing/pricing_page.html:32
+msgid "Simple Pricing"
+msgstr "عادي نرخونه"
+
+#: pricing/templates/pricing/pricing_page.html:41
+msgid "Trial Version"
+msgstr "ازمايښتي"
+
+#: pricing/templates/pricing/pricing_page.html:42
+msgid "7 Days Only"
+msgstr "یوازې ۷ ورځې"
+
+#: pricing/templates/pricing/pricing_page.html:42
+msgid "Free"
+msgstr "وړیا"
+
+#: pricing/templates/pricing/pricing_page.html:44
+msgid "No Backup Service"
+msgstr "بېک اپ نه شته"
+
+#: pricing/templates/pricing/pricing_page.html:45
+#: pricing/templates/pricing/pricing_page.html:61
+#: pricing/templates/pricing/pricing_page.html:77
+#: pricing/templates/pricing/pricing_page.html:93
+msgid "Analytics"
+msgstr "تحلیلونه"
+
+#: pricing/templates/pricing/pricing_page.html:46
+#: pricing/templates/pricing/pricing_page.html:62
+#: pricing/templates/pricing/pricing_page.html:78
+#: pricing/templates/pricing/pricing_page.html:94
+msgid "Point Of Sale"
+msgstr "د پلور نښنه/ځای"
+
+#: pricing/templates/pricing/pricing_page.html:47
+msgid "No Online Reporting"
+msgstr "آنلاین راپور نه لری"
+
+#: pricing/templates/pricing/pricing_page.html:48
+#: pricing/templates/pricing/pricing_page.html:64
+#: pricing/templates/pricing/pricing_page.html:80
+#: pricing/templates/pricing/pricing_page.html:96
+msgid "Barcode & QR code"
+msgstr " بار او کیو ار کوډ"
+
+#: pricing/templates/pricing/pricing_page.html:49
+msgid "No Support"
+msgstr "ملاتړ نشته"
+
+#: pricing/templates/pricing/pricing_page.html:51
+#: pricing/templates/pricing/pricing_page.html:67
+#: pricing/templates/pricing/pricing_page.html:83
+#: pricing/templates/pricing/pricing_page.html:99
+msgid "Download"
+msgstr "ډاونلوډ"
+
+#: pricing/templates/pricing/pricing_page.html:57
+msgid "Business"
+msgstr "سوداګري"
+
+#: pricing/templates/pricing/pricing_page.html:60
+#: pricing/templates/pricing/pricing_page.html:76
+#: pricing/templates/pricing/pricing_page.html:92
+msgid "Backup Service"
+msgstr "بېک اپ"
+
+#: pricing/templates/pricing/pricing_page.html:63
+#: pricing/templates/pricing/pricing_page.html:79
+#: pricing/templates/pricing/pricing_page.html:95
+msgid "Online Reporting"
+msgstr "آنلاین راپورونه"
+
+#: pricing/templates/pricing/pricing_page.html:65
+#: pricing/templates/pricing/pricing_page.html:81
+#: pricing/templates/pricing/pricing_page.html:97
+msgid "24/7 Support"
+msgstr "۲۴ساعته ملاتړ"
+
+#: pricing/templates/pricing/pricing_page.html:73
+msgid "Premium"
+msgstr "پریمیم"
+
+#: pricing/templates/pricing/pricing_page.html:89
+msgid "Ultimate"
+msgstr "حتمي"
+
+#: pricing/templates/pricing/pricing_page.html:114
+msgid "Frequently Ask Question"
+msgstr "اړينې پوښتنې"
+
+#: pricing/templates/pricing/snippets/access_code_modal.html:17
+msgid "Enter Access Code"
+msgstr "د لاسرسي کوډ ورکړئ"
+
+#: pricing/templates/pricing/snippets/access_code_modal.html:24
+msgid "Submit"
+msgstr "وسپارئ"
+
+#: templates/base/footer.html:19
+msgid "About Us"
+msgstr "زموږ په اړه"
+
+#: templates/base/footer.html:21 templates/base/navbar.html:58
+#: templates/dashboard_base/navbar.html:40
+msgid "Contact"
+msgstr "اړیکه"
+
+#: templates/base/footer.html:22
+msgid "Marketing Service"
+msgstr "د بازار موندنې خدمت"
+
+#: templates/base/footer.html:23
+msgid "Customer Service"
+msgstr "د پیرودونکو خدمت"
+
+#: templates/base/footer.html:29
+msgid "Quick Links"
+msgstr "لینکونه"
+
+#: templates/base/footer.html:31 templates/base/navbar.html:34
+msgid "Features"
+msgstr "برخی"
+
+#: templates/base/footer.html:32
+msgid "Terms of Service"
+msgstr "د خدمت شرطونه"
+
+#: templates/base/footer.html:33
+msgid "Privacy & Policy"
+msgstr "شخصي تنظيمات او تګلاره"
+
+#: templates/base/footer.html:39
+msgid "My Account"
+msgstr "زما حساب"
+
+#: templates/base/footer.html:51
+msgid "Resources"
+msgstr "سرچینې"
+
+#: templates/base/footer.html:54
+msgid "Supply Chain"
+msgstr "عرضه"
+
+#: templates/base/footer.html:55
+msgid "Agencies Relation"
+msgstr "د ادارو اړیکی"
+
+#: templates/base/navbar.html:63
+msgid "Languages"
+msgstr "ژبه"
+
+#: templates/base/navbar.html:88
+msgid "Logout"
+msgstr "وتل"
+
+#: templates/base/news_letter.html:10
+msgid "Experience the most simple way to <br> manage business"
+msgstr "غوره او ساده لاره تجربه کړئ <br> د سوادګرې د مدیريت په موخه"
+
+#: templates/base/news_letter.html:15
+msgid "enter your email"
+msgstr "برېښناليک مو وليکئ"
+
+#: templates/base/news_letter.html:19
+msgid "News Letter"
+msgstr "خبر لیک"
+
+#: templates/contact_page.html:17
+msgid "contact us"
+msgstr "اړیکه ونیسئ"
+
+#: templates/contact_page.html:18
+msgid "contact"
+msgstr "اړیکه"
+
+#: templates/contact_page.html:40
+msgid "Get in Touch"
+msgstr "په اړیکه کې اوسئ"
+
+#: templates/contact_page.html:67
+msgid "Save"
+msgstr "خوندي یې کړئ"
+
+#: templates/contact_page.html:74
+msgid "Kabul, Shahr Naw."
+msgstr "کابل٬ شهر نو"
+
+#: templates/contact_page.html:75
+msgid "Sherpor, St 1st"
+msgstr "شیرپور٬ اولنی سرک"
+
+#: templates/contact_page.html:89
+msgid "Send us your query anytime!"
+msgstr "هر وخت کولی شئ زموږ سره په اړیکه کې شئ"
+
+#: templates/dashboard_base/navbar.html:47
+msgid "Search"
+msgstr "لټون"
+
+#: templates/dashboard_base/navbar.html:69
+msgid "Add User"
+msgstr "کاروونکی اضافه کړئ"
+
+#: templates/dashboard_base/navbar.html:83
+msgid "Smart Shop"
+msgstr "اسمارت شاپ"
+
+#: templates/dashboard_base/navbar.html:116
+msgid "Users"
+msgstr "کاروونکي"
+
+#: templates/dashboard_base/navbar.html:125
+msgid "Payments"
+msgstr "تادیات"
+
+#: templates/dashboard_base/navbar.html:179
+msgid "Enabled"
+msgstr "فعال شوی"
+
+#: templates/dashboard_base/navbar.html:185
+msgid "Disabled"
+msgstr "غیر فعال محصولات"
+
+#: templates/dashboard_base/navbar.html:237
+msgid "Daily"
+msgstr "ورځنۍ"
+
+#: templates/dashboard_base/navbar.html:243
+msgid "Monthly"
+msgstr "میاشتنۍ"
+
+#: templates/dashboard_base/navbar.html:261
+msgid "Recent"
+msgstr "وروستی"
+
+#: templates/dashboard_base/navbar.html:267
+msgid "All"
+msgstr "ټول"
+
+#: templates/dashboard_base/navbar.html:285
+msgid "Month"
+msgstr "میاشت"
+
+#: templates/dashboard_base/navbar.html:291
+msgid "Year"
+msgstr "کال"
+
+#: templates/dashboard_base/navbar.html:301
+msgid "More"
+msgstr "نور"
+
+#: templates/feature_page.html:14
+msgid "Our Features"
+msgstr "زمونژ برخې"
+
+#: templates/feature_page.html:15
+msgid "feature"
+msgstr "برخې"
+
+#: templates/feature_page.html:32
+msgid "Reports"
+msgstr "راپورونه"
+
+#: templates/feature_page.html:41
+msgid "Backup"
+msgstr "بیک اپ"
+
+#: templates/feature_page.html:50
+msgid "Management"
+msgstr "اداره"
+
+#: templates/feature_page.html:68
+msgid "How POS Enhance Your Business Efficiency"
+msgstr "دا سېستم ستاسو سوداګرۍ ته څنګه وده ورکوي"
+
+#: templates/feature_page.html:70 templates/feature_page.html:98
+msgid "learn more"
+msgstr "لا نور معلومات"
+
+#: templates/feature_page.html:96
+msgid "Utilize Features Of POS In An Efficient Way"
+msgstr "د سېستم اسانتیاوې په غوره توګه وکاروئ"
+
+#: templates/home_page.html:21
+msgid "Automate & Boost Your Business"
+msgstr "خپله سوداګرۍ ته په اتومات ډول وده ورکړئ"
+
+#: templates/home_page.html:53
+msgid "Our Core Features"
+msgstr "زموږ اصلي برخی"
+
+#: templates/home_page.html:58
+msgid "Analytics Report"
+msgstr "د تحلیل راپور"
+
+#: templates/home_page.html:64
+msgid "Barcode & QR"
+msgstr "بارکوډ او کیو آر"
+
+#: templates/home_page.html:70
+msgid "Receipt & Label Printing"
+msgstr "رسید او لیبل چاپول"
+
+#: templates/home_page.html:75
+msgid "Track Inventory"
+msgstr "د پلور اندراج"
+
+#: templates/home_page.html:86
+msgid "Orders & Invoicing"
+msgstr "سپارښتنې او بېل"
+
+#: templates/home_page.html:92
+msgid "Manage Remotely"
+msgstr "واټنیز مدیریت"
+
+#: templates/home_page.html:97
+msgid "Financial Control"
+msgstr "مالي کنټرول"
+
+#: templates/home_page.html:102
+msgid "Backup & Web Panel"
+msgstr "بېک اپ او ویب پینل"
+
+#: templates/home_page.html:115
+msgid "GALLERY"
+msgstr "البوم"
+
+#: templates/home_page.html:116
+msgid "App Screenshots"
+msgstr "د سېستم سکرین شاټونه"
+
+#: templates/home_page.html:172
+msgid "Overcome Barriers And First Time In Afghanistan"
+msgstr "په لومړي ځل په افغانستان کې نړۍ وال پرمختللی سېستم"
+
+#: templates/home_page.html:174
+msgid "Naqibullah Sahil,"
+msgstr "نقیب الله ساحل"
+
+#: templates/home_page.html:174
+msgid "CEO of FSH"
+msgstr "د فوکس اجراییه رییس"
+
+#: templates/home_page.html:177
+msgid "More Than Just A Regular Point Of Sale"
+msgstr "تر دوامداره پلور څو چنده ډېروالی"
+
+#: templates/home_page.html:179
+msgid "Ahmed Shah,"
+msgstr "احمد شاه"
+
+#: templates/home_page.html:179
+msgid "Project Manager"
+msgstr "د پروژې مدير"
+
+#: templates/home_page.html:182
+msgid "Elegant Design Improves User Experience"
+msgstr "ښه ترحه ستاسو تجربه له ښکلا ډکوي"
+
+#: templates/home_page.html:184
+msgid "Arif Moazy,"
+msgstr "عارف معزي"
+
+#: templates/home_page.html:184
+msgid "Full Stack Developer"
+msgstr "د برنامو طراح"

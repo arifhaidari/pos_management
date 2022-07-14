@@ -1,0 +1,254 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language_bidi as language_bidi %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <div class="content-header">
+          <div class="container-fluid">
+               <div class="row mb-2">
+                    <div class="col-sm-6">
+                         <h1 class="m-0 text-dark">{% trans "Recent Session" %}</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb float-sm-right">
+                              <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                              <li class="breadcrumb-item"><a href="{% url 'pos:session' %}">{% trans "Sessions" %}</a></li>
+                              <li class="breadcrumb-item active">{% trans "Recent Session" %}</li>
+                         </ol>
+                    </div><!-- /.col -->
+               </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+     </div>
+     <!-- /.content-header -->
+
+     <!-- Main content -->
+     <section class="content">
+          <div class="container-fluid">
+               <div class="card card-default color-palette-box">
+                    <div class="card-body">
+                         <!-- Small boxes (Stat box) -->
+                         <div class="row">
+                              <div class="col-lg-3 col-6">
+                                   <!-- small box -->
+                                   <div class="small-box bg-info">
+                                        <div class="inner">
+                                             <h3>{{ object.opening_time|date:"SHORT_DATETIME_FORMAT"|slice:"17" }}</h3>
+
+                                             <p>{% trans "Opening Time" %}</p>
+                                        </div>
+                                        <div class="icon">
+                                             <i class="ion ion-bag"></i>
+                                        </div>
+                                        <a href="#" class="small-box-footer">{% trans "More info" %} <i
+                                                  class="fas fa-arrow-circle-right"></i></a>
+                                   </div>
+                              </div>
+                              <!-- ./col -->
+                              <div class="col-lg-3 col-6">
+                                   <!-- small box -->
+                                   <div class="small-box bg-success">
+                                        <div class="inner">
+                                             <h3>{{ object.opening_balance }}</h3>
+
+                                             <p>{% trans "Opening Balance" %}</p>
+                                        </div>
+                                        <div class="icon">
+                                             <i class="ion ion-stats-bars"></i>
+                                        </div>
+                                        <a href="#" class="small-box-footer">{% trans "More info" %} <i
+                                                  class="fas fa-arrow-circle-right"></i></a>
+                                   </div>
+                              </div>
+                              <!-- ./col -->
+                              <div class="col-lg-3 col-6">
+                                   <!-- small box -->
+                                   <div class="small-box bg-warning">
+                                        <div class="inner">
+                                             <h3>{{ object.closing_time|date:"SHORT_DATETIME_FORMAT"|slice:"17" }}</h3>
+
+                                             <p>{% trans "Closing Time" %}</p>
+                                        </div>
+                                        <div class="icon">
+                                             <i class="ion ion-person-add"></i>
+                                        </div>
+                                        <a href="#" class="small-box-footer">{% trans "More info" %} <i
+                                                  class="fas fa-arrow-circle-right"></i></a>
+                                   </div>
+                              </div>
+                              <!-- ./col -->
+                              <div class="col-lg-3 col-6">
+                                   <!-- small box -->
+                                   <div class="small-box bg-danger">
+                                        <div class="inner">
+                                             <h3>{{ object.closing_balance }}</h3>
+
+                                             <p>{% trans "Closing Balance" %}</p>
+                                        </div>
+                                        <div class="icon">
+                                             <i class="ion ion-pie-graph"></i>
+                                        </div>
+                                        <a href="#" class="small-box-footer">{% trans "More info" %} <i
+                                                  class="fas fa-arrow-circle-right"></i></a>
+                                   </div>
+                              </div>
+                              <!-- ./col -->
+                         </div>
+                         <!-- /.row -->
+                    </div>
+               </div>
+
+
+               <!-- ///////////////// -->
+
+               <div class="row">
+                    <div class="col-md-3">
+                         <!-- About Me Box -->
+                         <div class="card card-success">
+                              <div class="card-header">
+                                   <h3 class="card-title">{% trans "More Info" %}</h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Session#" %}</strong>
+
+                                   <p class="text-muted"> {{ object.session_pk }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Order No" %}</strong>
+
+                                   <p class="text-muted"> {{ object.order_no }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Session Discount" %}</strong>
+
+                                   <p class="text-muted"> {{ object.session_discount }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Net Revenue" %}</strong>
+
+                                   <p class="text-muted"> {{ object.net_revenue }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Profit" %}</strong>
+
+                                   <p class="text-muted">
+                                        {{ object.get_session_profit }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Session Expense(s)" %}</strong>
+
+                                   <p class="text-muted"> {{ session_daily_expense }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Drawer Status" %}</strong>
+
+                                   <p class="text-muted"> 
+                                        {% if object.drawer_status %}
+                                             {% trans "Smooth" %}
+                                        {% else %}
+                                             {% trans "Low" %}
+                                        {% endif %}
+                                   </p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Session Comment" %}</strong>
+
+                                   <p class="text-muted"> 
+                                        {% if session.session_comment %}
+                                        {{ object.session_comment }}
+                                        {% else %}
+                                             {% trans "There is no comment in this session" %}
+                                        {% endif %}
+                                   </p>
+
+
+                              </div>
+                              <!-- /.card-body -->
+                         </div>
+                         <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-9">
+
+                         <div class="card">
+                              <div class="card-header">
+                                   <h3 class="card-title">{% trans "Recent Session Orders" %}</h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                   <table dir="{% if language_bidi %}rtl{% else %}ltr{% endif %}" id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                             <tr>
+                                                  <th>{% trans "Order" %}</th>
+                                                  <th>{% trans "Subtotal" %}</th>
+                                                  <th>{% trans "Discount" %}</th>
+                                                  <th>{% trans "Net Total" %}</th>
+                                                  <th>{% trans "Item No" %}</th>
+                                                  <th>{% trans "Date" %}</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             {% for order in session_orders %}
+
+                                             <tr>
+                                                  <td>
+                                                       <a href="{{ order.get_absolute_url }}">
+                                                            {% if order.payment_completion_status == False %}
+                                                            {% trans "Invoice" %}-#{{ order.pos_order_pk }}
+                                                            {% else %}
+                                                                 {% if order.order_subtotal > 0 %}
+                                                                 {% trans "Order" %}-#{{ order.pos_order_pk }}
+                                                                 {% else %}
+                                                                 {% trans "Return" %}-#{{ order.pos_order_pk }}
+                                                                 {% endif %}
+                                                            {% endif %}
+                                                       </a>
+                                                  </td>
+                                                  <td>{{ order.get_subtotal }}</td>
+                                                  <td>{{ order.order_discount }}</td>
+                                                  <td>{{ order.order_subtotal }}</td>
+                                                  <td>{{ order.order_item_no }}</td>
+                                                  <td>{{ order.timestamp }}</td>
+                                             </tr>
+                                             {% endfor %}
+
+                                        </tbody>
+                                        <tfoot>
+                                             <tr>
+                                                  <th>{% trans "Order" %}</th>
+                                                  <th>{% trans "Subtotal" %}</th>
+                                                  <th>{% trans "Discount" %}</th>
+                                                  <th>{% trans "Net Total" %}</th>
+                                                  <th>{% trans "Item No" %}</th>
+                                                  <th>{% trans "Date" %}</th>
+                                             </tr>
+                                        </tfoot>
+                                   </table>
+                              </div>
+                              <!-- /.card-body -->
+                         </div>
+                         <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+               </div>
+               <!-- /.row -->
+
+          </div><!-- /.container-fluid -->
+     </section>
+     <!-- /.content -->
+</div>
+
+
+{% endblock %}

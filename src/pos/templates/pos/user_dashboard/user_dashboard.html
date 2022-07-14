@@ -1,0 +1,356 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+<!-- <script type=""> -->
+{% block jquery %}
+{% include "pos/user_dashboard/annual_net_revenue_chart.html" %}
+{% include "pos/user_dashboard/annual_profit_chart.html" %}
+{% include "pos/user_dashboard/top_six_subtotal.html" %}
+{% include "pos/user_dashboard/top_six_quantity.html" %}
+{% endblock %}
+<!-- </script> -->
+
+{% block content %}
+{% get_current_language as language_code %}
+{% get_current_language_bidi as language_bidi %}
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script> -->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">{% trans "Dashboard" %}</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+            <li class="breadcrumb-item active">{% trans "Dashboard" %}</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      
+     <!-- Info boxes -->
+     <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-chart-area"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Net Revenue" %} ({{ today.year }})</span>
+                <span class="info-box-number">
+                  {{ annual_net_subtotal }}
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-wallet"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Daily Expense" %} ({{ today.date|date:"D" }})</span>
+                <span class="info-box-number">{{ daily_expense }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+  
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+  
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="far fa-clipboard"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Expenses" %} ({{ today.date|date:"M" }})</span>
+                <span class="info-box-number">{{ monthly_expense }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-business-time"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Sessions" %} ({{ today.date|date:"M" }})</span>
+                <span class="info-box-number">{{ session_no }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-shopping-basket"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Products" %}</span>
+                <span class="info-box-number">
+                  {{ object_list.name__count }}
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-braille"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Categories" %}</span>
+                <span class="info-box-number">{{ categories }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+  
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+  
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-chart-bar"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Revenue" %} ({{ today.date|date:"M" }})</span>
+                <span class="info-box-number">{{ monthly_net_revenue }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-bell"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Notifications" %}</span>
+                <span class="info-box-number">{{ notifications }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cart-plus"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Orders" %} ({{ today.date|date:"M" }})</span>
+                <span class="info-box-number">
+                  {{ order_no }}
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-bookmark"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Logs" %}</span>
+                <span class="info-box-number">{{ logs_no }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+  
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-store-slash"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Returns" %} ({{ today.date|date:"M" }})</span>
+                <span class="info-box-number">{{ return_no }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-file-alt"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">{% trans "Invoices" %}</span>
+                <span class="info-box-number">{{ invoices }}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- <div class="row">
+          <canvas id="myChart" width="400" height="400"></canvas>
+
+        </div> -->
+
+
+
+        <!-- ///////////// -->
+
+        <div class="row">
+
+          <!-- Top Sales Product - Subtotal -->
+          <div class="col-md-6">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">{% trans "Top Sales Products (Net Revenue)" %}</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                  <canvas id="donutSubtotalChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                  <!-- <canvas id="donutSubtotalChart" width="400" height="100"></canvas> -->
+                  
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col (RIGHT) -->
+
+          <!-- Top Sales Product - Quantity -->
+          <div class="col-md-6">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">{% trans "Top Sales Products (Quantity)" %}</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                  <canvas id="pieQuantityChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                  <!-- <canvas id="donutSubtotalChart" width="400" height="100"></canvas> -->
+                  
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col (RIGHT) -->
+
+          
+          <!-- Profit -->
+          <div class="col-md-12">
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">{% trans "Net Revenue & Expenses" %}</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                  <!-- <canvas id="myChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas> -->
+                  <canvas id="revenueExpenseChart" width="400" height="100"></canvas>
+                  
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col (RIGHT) -->
+
+           <!-- Expense and Net Revenue -->
+           <div class="col-md-12">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">{% trans "Net Revenue, Expenses & Profit" %}</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart">
+                  <!-- <canvas id="myChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas> -->
+                  <canvas id="revenueProfitExpenseChart" width="400" height="100"></canvas>
+                  
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col (RIGHT) -->
+
+
+
+        </div>
+        <!-- /.row -->
+
+
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+
+
+{% endblock %}
+
+

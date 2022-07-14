@@ -1,0 +1,226 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+{% if request.user.is_authenticated and request.user.admin %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>User Detail</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="float-sm-right">
+               <a href="#" class="btn btn-outline-primary"><i class="fas fa-pencil-alt mr-1"></i> Change Password</a>
+               <a href="{% url 'dashboard:delete' id=current_client.id %}" class="btn btn-outline-danger"><i class="fas fa-trash mr-1"></i> Delete</a>
+               <a href="{% url 'dashboard:update' id=current_client.id %}" class="btn btn-outline-primary"><i class="fas fa-edit mr-1"></i> Edit</a>
+          </ol>
+          </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-md-3">
+
+           <!-- Profile Image -->
+           <div class="card card-primary card-outline">
+             <div class="card-body box-profile">
+               <div class="text-center">
+                 <img class="profile-user-img img-fluid img-circle"
+                      src="{% static 'admin_lte/dist/img/avatar5.png' %}"
+                      alt="User profile picture">
+               </div>
+
+               <h3 class="profile-username text-center">{{ current_client.full_name }}</h3>
+
+               <p class="text-muted text-center">{{ current_client.business }}</p>
+
+               <ul class="list-group list-group-unbordered mb-3">
+                 <li class="list-group-item">
+                   <b>Active</b> <a class="float-right">{% if current_client.is_active %}Yes{% else %}No{% endif %}</a>
+                 </li>
+                 <li class="list-group-item">
+                   <b>Start Contract At</b> <a class="float-right">{{ current_client.start_contract_at }}</a>
+                 </li>
+                 <li class="list-group-item">
+                   <b>End Contract At</b> <a class="float-right">{{ current_client.end_contract_at }}</a>
+                 </li>
+               </ul>
+               {% if current_client.is_active %}
+               <a href="{% url 'dashboard:activate_client' id=current_client.id %}" class="btn btn-secondary btn-block"><i class="fas fa-power-off"></i> <b>Deactivate</b></a>
+               {% else %}
+               <a href="{% url 'dashboard:activate_client' id=current_client.id %}" class="btn btn-success btn-block"><i class="fas fa-check"></i> <b>Activate</b></a>
+               {% endif %}
+           </div>
+             <!-- /.card-body -->
+           </div>
+           <!-- /.card -->
+
+           <!-- About Me Box -->
+           <div class="card card-primary">
+             <div class="card-header">
+               <h3 class="card-title">More Info</h3>
+             </div>
+             <!-- /.card-header -->
+             <div class="card-body">
+               <strong><i class="fas fa-book mr-1"></i> Access Code</strong>
+
+               <p class="text-muted">
+                 {{ current_client.access_code }}
+               </p>
+
+               <hr>
+
+               <strong><i class="fas fa-address-card mr-1"></i> Plain Password</strong>
+
+               <p class="text-muted">
+                 {{ current_client.plain_password }}
+               </p>
+
+               <hr>
+               <strong><i class="fas fa-phone mr-1"></i> Phone Number</strong>
+
+               <p class="text-muted">{{ current_client.phone }}</p>
+
+               <hr>
+
+               <strong><i class="fas fa-phone mr-1"></i> Email</strong>
+
+               <p class="text-muted">{{ current_client.email }}</p>
+
+               <hr>
+
+               <strong><i class="fas fa-phone mr-1"></i> Fee Amount</strong>
+
+               <p class="text-muted">{{ current_client.deal_amount }}</p>
+
+               <hr>
+
+               <strong><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
+
+               <p class="text-muted">{{ current_client.address }}</p>
+
+               <hr>
+
+               <strong><i class="fas fa-pencil-alt mr-1"></i> Register Date</strong>
+               <p class="text-muted">{{ current_client.timestamp | date }}</p>
+
+               
+             </div>
+             <!-- /.card-body -->
+           </div>
+           <!-- /.card -->
+         </div>
+         <!-- /.col -->
+         <div class="col-md-9">
+           <div class="card">
+             <div class="card-header p-2">
+               <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Payments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Add Payments</a></li>
+               </ul>
+               
+             </div><!-- /.card-header -->
+             <div class="card-body">
+               <div class="tab-content">
+                 <div class="active tab-pane" id="activity">
+                    <div class="card">
+                         <div class="card-header">
+                           <h3 class="card-title">All payments of {{ current_client.full_name }}</h3>
+                         </div>
+                         <!-- /.card-header -->
+                         <div class="card-body">
+                           <table id="example1" class="table table-bordered table-striped">
+                             <thead>
+                             <tr>
+                               <th>Amount</th>
+                               <!-- <th>Status</th> -->
+                               <th>Paid Amount</th>
+                               <th>Remaining</th>
+                               <th>Start Contract At</th>
+                               <th>End Contract At</th>
+                               <th>Paid Date</th>
+                               <th>Operation</th>
+                             </tr>
+                             </thead>
+                             <tbody>
+                               {% for pay in payment_object_list %}
+                             <tr>
+                               <td>{{ pay.amount }}</td>
+                               <!-- <td>{{ pay.status }}</td> -->
+                               <td>{{ pay.paid_amount }}</td>
+                               <td>{{ pay.get_remaining }}</td>
+                               <td>{{ pay.start_contract_date }}</td>
+                               <td>{{ pay.end_contract_date }}</td>
+                               <td>{{ pay.paid_date }}</td>
+                               <td>
+                                   <a href="{% url 'dashboard:delete_payment' id=pay.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash mr-1"></i></a>
+                                   <a href="{% url 'dashboard:update_payment' id=pay.id %}" class="btn btn-sm btn-primary"><i class="fas fa-edit mr-1"></i></a>
+                               </td>
+                             </tr>
+                             {% endfor %}
+                             </tbody>
+                             <tfoot>
+                             <tr>
+                               <th>Amount</th>
+                               <!-- <th>Status</th> -->
+                               <th>Paid Amount</th>
+                               <th>Remaining</th>
+                               <th>Start Contract At</th>
+                               <th>End Contract At</th>
+                               <th>Paid Date</th>
+                               <th>Operation</th>
+                             </tr>
+                             </tfoot>
+                           </table>
+                         </div>
+                         <!-- /.card-body -->
+                       </div>
+                 </div>
+
+                 <div class="tab-pane" id="settings">
+                   <form class="form-horizontal" method="POST" action="{% url 'dashboard:create_payment' %}">
+                     {% csrf_token %}
+                     <input type="hidden" value="{{ current_client.id }}" name="current_client_id">
+                     <div class="form-group row">
+                       <label for="inputName" class="col-sm-2 col-form-label">Contract Amount</label>
+                       <div class="col-sm-10">
+                         <input type="text" name="paid_amount" class="form-control" id="inputName" placeholder="Amount Payable">
+                       </div>
+                     </div>
+                     <div class="form-group row">
+                       <div class="offset-sm-2 col-sm-10">
+                         <button type="submit" class="btn btn-success">Submit</button>
+                       </div>
+                     </div>
+                   </form>
+                 </div>
+                 <!-- /.tab-pane -->
+               </div>
+               <!-- /.tab-content -->
+             </div><!-- /.card-body -->
+           </div>
+           <!-- /.nav-tabs-custom -->
+         </div>
+         <!-- /.col -->
+       </div>
+       <!-- /.row -->
+     </div><!-- /.container-fluid -->
+   </section>
+   <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endif %}
+{% endblock %}

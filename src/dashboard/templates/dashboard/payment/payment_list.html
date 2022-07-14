@@ -1,0 +1,225 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% if request.user.is_authenticated and request.user.admin %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Payments</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="float-sm-right">
+               <a href="#" class="btn btn-outline-primary"><i class="fas fa-pencil-alt mr-1"></i> Change Password</a>
+               <a href="{#" class="btn btn-outline-danger"><i class="fas fa-trash mr-1"></i> Delete</a>
+               <a href="#" class="btn btn-outline-primary"><i class="fas fa-edit mr-1"></i> Edit</a>
+          </ol>
+          </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-md-3">
+
+           <!-- About Me Box -->
+           <div class="card card-primary">
+             <div class="card-header">
+               <h3 class="card-title">More Info</h3>
+             </div>
+             <!-- /.card-header -->
+             <div class="card-body">
+               <strong><i class="fas fa-battery-half mr-1"></i> Incomplete Payments</strong>
+
+               <p class="text-muted">
+                 {{ incomplete_payment_no }}
+               </p>
+
+               <hr>
+
+               <strong><i class="fas fa-battery-full mr-1"></i> Completed Payments</strong>
+
+               <p class="text-muted">
+                {{ complete_payment_no }}
+               </p>
+
+               <hr>
+               <strong><i class="fa fa-toggle-on mr-1"></i> Activated Users</strong>
+
+               <p class="text-muted">5</p>
+
+               <hr>
+
+               <strong><i class="fa fa-toggle-off mr-1"></i> Deactivated Users</strong>
+
+               <p class="text-muted">3</p>
+
+               <hr>
+
+               <strong><i class="fas fa-money-check-alt mr-1"></i> Total Payment (June)</strong>
+               <p class="text-muted">900</p>
+
+               <strong><i class="fas fa-money-check-alt mr-1"></i> Total Payment (2020)</strong>
+               <p class="text-muted">23900</p>
+
+               <strong><i class="fas fa-money-check-alt mr-1"></i> Total Payment (All)</strong>
+               <p class="text-muted">12309887</p>
+
+               
+             </div>
+             <!-- /.card-body -->
+           </div>
+           <!-- /.card -->
+         </div>
+         <!-- /.col -->
+         <div class="col-md-9">
+           <div class="card">
+             <div class="card-header p-2">
+               <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Completed</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Incomplete</a></li>
+               </ul>
+               
+             </div><!-- /.card-header -->
+             <div class="card-body">
+               <div class="tab-content">
+                 <div class="active tab-pane" id="activity">
+                    <div class="card">
+                         <div class="card-header">
+                           <h3 class="card-title">All Completed Payments Detail</h3>
+                         </div>
+                         <!-- /.card-header -->
+                         <div class="card-body">
+                           <table id="example1" class="table table-bordered table-striped">
+                             <thead>
+                             <tr>
+                               <th>Name</th>
+                               <th>Amount</th>
+                               <!-- <th>Status</th> -->
+                               <th>Paid Amount</th>
+                               <th>Remaining</th>
+                               <th>End Contract At</th>
+                               <th>Paid Date</th>
+                               <th>Operation</th>
+                             </tr>
+                             </thead>
+                             <tbody>
+                               {% for pay in object_list %}
+                             <tr>
+                               <td>{{ pay.client.full_name }}</td>
+                               <td>{{ pay.amount }}</td>
+                               <!-- <td>{{ pay.status }}</td> -->
+                               <td>{{ pay.paid_amount }}</td>
+                               <td>{{ pay.get_remaining }}</td>
+                               <td>{{ pay.end_contract_date }}</td>
+                               <td>{{ pay.paid_date }}</td>
+                               <td>
+                                   <a href="{% url 'dashboard:delete_payment' id=pay.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash mr-1"></i></a>
+                                   <a href="{% url 'dashboard:update_payment' id=pay.id %}" class="btn btn-sm btn-primary"><i class="fas fa-edit mr-1"></i></a>
+                               </td>
+                             </tr>
+                             {% endfor %}
+                             </tbody>
+                             <tfoot>
+                             <tr>
+                               <th>Name</th>
+                               <th>Amount</th>
+                               <!-- <th>Status</th> -->
+                               <th>Paid Amount</th>
+                               <th>Remaining</th>
+                               <th>End Contract At</th>
+                               <th>Paid Date</th>
+                               <th>Operation</th>
+                             </tr>
+                             </tfoot>
+                           </table>
+                         </div>
+                         <!-- /.card-body -->
+                       </div>
+                 </div>
+                 <!-- /.tab-pane -->
+                 <div class="tab-pane" id="timeline">
+                    <div class="card">
+                         <div class="card-header">
+                           <h3 class="card-title">All Incomplete Payments Details</h3>
+                         </div>
+                         <!-- /.card-header -->
+                         <div class="card-body">
+                              <table id="option" class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                  <th>Name</th>
+                                  <th>Amount</th>
+                                  <!-- <th>Status</th> -->
+                                  <th>Paid Amount</th>
+                                  <th>Remaining</th>
+                                  <th>End Contract At</th>
+                                  <th>Paid Date</th>
+                                  <th>Operation</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                  {% for pay in incomplete %}
+                                <tr>
+                                  <td>{{ pay.client.full_name }}</td>
+                                  <td>{{ pay.amount }}</td>
+                                  <!-- <td>{{ pay.status }}</td> -->
+                                  <td>{{ pay.paid_amount }}</td>
+                                  <td>{{ pay.get_remaining }}</td>
+                                  <td>{{ pay.end_contract_date }}</td>
+                                  <td>{{ pay.paid_date }}</td>
+                                  <td>
+                                      <a href="{% url 'dashboard:delete_payment' id=pay.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash mr-1"></i></a>
+                                      <a href="{% url 'dashboard:update_payment' id=pay.id %}" class="btn btn-sm btn-primary"><i class="fas fa-edit mr-1"></i></a>
+                                  </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                  <th>Name</th>
+                                  <th>Amount</th>
+                                  <!-- <th>Status</th> -->
+                                  <th>Paid Amount</th>
+                                  <th>Remaining</th>
+                                  <th>End Contract At</th>
+                                  <th>Paid Date</th>
+                                  <th>Operation</th>
+                                </tr>
+                                </tfoot>
+                              </table>
+                            </div>
+                            <!-- /.card-body -->
+                         <!-- /.card-body -->
+                       </div>
+                 </div>
+                 <!-- /.tab-pane -->
+               </div>
+               <!-- /.tab-content -->
+             </div><!-- /.card-body -->
+           </div>
+           <!-- /.nav-tabs-custom -->
+         </div>
+         <!-- /.col -->
+       </div>
+       <!-- /.row -->
+     </div><!-- /.container-fluid -->
+   </section>
+   <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+
+{% load static %}
+{% load i18n %}
+
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'login_static/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'login_static/css/main.css' %}">
+<!--===============================================================================================-->
+
+	<title>Register</title>
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('/static/login_static/images/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" method="POST">{% csrf_token %}
+
+					<span class="login100-form-title p-b-34 p-t-27">
+						{% trans "POS Request" %}
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "{% trans 'Enter full name' %}">
+						{{ form.full_name }}
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "{% trans 'Enter phone number' %}">
+						{{ form.phone }}
+						<span class="focus-input100" data-placeholder="&#112;"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "{% trans 'Enter business' %}">
+						{{ form.business }}
+						<span class="focus-input100" data-placeholder="&#xf200;"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "{% trans 'Enter address' %}">
+						{{ form.address }}
+						<span class="focus-input100" data-placeholder="&#x100;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="{% trans 'Enter password' %}">
+						{{ form.password }}
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate="{% trans 'Enter confirm password' %}">
+						{{ form.repeat_password }}
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							{% trans "Register" %}
+						</button>
+					</div>
+
+					<div class="text-center p-t-90">
+                        <small>{% trans "have account" %}</small>
+						<a class="txt1" href="{% url 'accounts:login' %}">
+							{% trans "Login" %}
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{% static 'login_static/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login_static/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login_static/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'login_static/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login_static/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login_static/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'login_static/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login_static/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login_static/js/main.js' %}"></script>
+
+

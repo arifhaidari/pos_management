@@ -1,0 +1,55 @@
+{% load static %}
+{% load i18n %}
+
+<script>
+     $(document).ready(function () {
+          var endPoint = "/pos/chart/data/"
+          var subtotalData = [];
+          var topSixName = [];
+          var topSixColor = [];
+
+          $.ajax({
+               method: "GET",
+               url: endPoint,
+               success: function (data) {
+                    topSixName = data.top_six_subtotal_name
+                    topSixColor = data.top_six_color
+                    subtotalData = data.top_six_subtotal
+                    setChart()
+
+               },
+               error: function (error_data) {
+                    console.log('error///////////////////'),
+                         console.log(error_data)
+               }
+          })
+
+          function setChart() {
+               var donutChartCanvas = $('#donutSubtotalChart').get(0).getContext('2d')
+               var donutData = {
+                    labels: topSixName,
+                    datasets: [
+                         {
+                              data: subtotalData,
+                              // data: [700, 500, 400, 600, 300, 100],
+                              backgroundColor: topSixColor,
+                         }
+                    ]
+               }
+               var donutOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+               }
+               //Create pie or douhnut chart
+               // You can switch between pie and douhnut using the method below.
+               var donutChart = new Chart(donutChartCanvas, {
+                    type: 'doughnut',
+                    data: donutData,
+                    options: donutOptions
+               })
+          }
+
+
+     });
+
+</script>

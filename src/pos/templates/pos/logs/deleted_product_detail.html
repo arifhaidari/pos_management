@@ -1,0 +1,111 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language_bidi as language_bidi %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <div class="content-header">
+          <div class="container-fluid">
+               <div class="row mb-2">
+                    <div class="col-sm-6">
+                         <h1 class="m-0 text-dark">{% trans "Deleted Product Details" %}</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb float-sm-right">
+                              <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                              <li class="breadcrumb-item"><a href="{% url 'pos:log_list' %}">{% trans "Logs" %}</a></li>
+                              <li class="breadcrumb-item active">{% trans "Log Details" %}</li>
+                         </ol>
+                    </div><!-- /.col -->
+               </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+     </div>
+     <!-- /.content-header -->
+
+     <!-- Main content -->
+    <section class="content">
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-12">
+
+           <div class="card">
+               <div class="card-header">
+                 <h3 class="card-title">{% trans "Details Of Deleted Product" %}</h3>
+               </div>
+               <!-- /.card-header -->
+               <div class="card-body">
+                 <table id="edited2" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                         <th>{% trans "Name" %}</th>
+                         <th>{% trans "Purchase" %}</th>
+                         <th>{% trans "Price" %}</th>
+                         <th>{% trans "Quantity" %}</th>
+                         <th>{% trans "Enabled?" %}</th>
+                         <th>{% trans "Barcode" %}</th>
+                         <th>{% trans "Weight" %}</th>
+                         <th>{% trans "Variant(s)" %}</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    {% for product in deleted_product %}
+                    <tr>
+                         <td>
+                              {{ product.name }}
+                         </td>
+                         <td>{{ product.purchase }}</td>
+                         <td>{{ product.price }}</td>
+                         <td>{{ product.quantity }}</td>
+                         <td>
+                              {% if product.enable_product %}
+                              {% trans "Yes" %}
+                              {% else %}
+                              {% trans "No" %}
+                              {% endif %}
+                         </td>
+                         <td>{{ product.barcode }}</td>
+                         <td>{{ product.weight }}</td>
+                         <td>
+                              {% if product.has_variant %}
+                              {% trans "Yes" %}
+                              {% else %}
+                              {% trans "No" %}
+                              {% endif %}
+                         </td>
+                    </tr>
+                    {% endfor %}
+
+               </tbody>
+               <tfoot>
+                    <tr>
+                         <th>{% trans "Name" %}</th>
+                         <th>{% trans "Purchase" %}</th>
+                         <th>{% trans "Price" %}</th>
+                         <th>{% trans "Quantity" %}</th>
+                         <th>{% trans "Enabled?" %}</th>
+                         <th>{% trans "Barcode" %}</th>
+                         <th>{% trans "Weight" %}</th>
+                         <th>{% trans "Variant(s)" %}</th>
+                    </tr>
+               </tfoot>
+                 </table>
+               </div>
+               <!-- /.card-body -->
+             </div>
+             <!-- /.card -->
+         </div>
+         <!-- /.col -->
+       </div>
+       <!-- /.row -->
+     </div>
+     <!-- /.container-fluid -->
+   </section>
+   <!-- /.content -->
+</div>
+
+
+{% endblock %}

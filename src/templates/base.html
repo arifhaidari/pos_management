@@ -1,0 +1,66 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as language_code %}
+{% get_current_language_bidi as language_bidi %}
+<!DOCTYPE html>
+<html
+    lang="{% if language_code == 'en-us' %}en{% elif language_code == 'fa' %}fa{% elif language_code == 'ur' %}ur{% endif %}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Smart Shop</title>
+    {% include "base/css.html" %}
+    <!-- <style>
+        .my_body {
+            text-align: right;
+        }
+    </style> -->
+    {% if language_bidi %}
+    <style>
+        .my_body {
+            text-align: right;
+        }
+         p {
+            text-align: right;
+        }
+        h4 {
+            text-align: right;
+            direction: rtl;
+        }
+    </style>
+    {% else %}
+    <style>
+        .my_body {
+            text-align: left;
+        }
+         p {
+            text-align: left;
+        }
+        h4 {
+            text-align: left;
+            direction: ltr;
+        }
+    </style>
+    {% endif %}
+</head>
+
+<body id="body" class="my_body">
+
+    {% include "base/navbar.html" %}
+
+    {% include "base/django_messages.html" %}
+
+
+    {% block content %}
+    {% endblock %}
+
+
+    {% include "base/footer.html" %}
+    {% include "base/js.html" %}
+</body>
+
+</html>
+
+<!-- 
+tyle="text-align: right;" -->

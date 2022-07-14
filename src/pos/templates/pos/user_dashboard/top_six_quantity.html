@@ -1,0 +1,54 @@
+{% load static %}
+{% load i18n %}
+
+<script>
+     $(document).ready(function () {
+          var endPoint = "/pos/chart/data/"
+          var subtotalData = [];
+          var topSixName = [];
+          var topSixColor = [];
+
+          $.ajax({
+               method: "GET",
+               url: endPoint,
+               success: function (data) {
+                    topSixName = data.top_six_quantity_name
+                    topSixColor = data.top_six_color
+                    quantityData = data.top_six_quantity
+                    setChart()
+
+               },
+               error: function (error_data) {
+                    console.log('error///////////////////'),
+                         console.log(error_data)
+               }
+          })
+
+          function setChart() {
+               var pieChartCanvas = $('#pieQuantityChart').get(0).getContext('2d')
+               var pieData = {
+                    labels: topSixName,
+                    datasets: [
+                         {
+                              data: quantityData,
+                              backgroundColor: topSixColor,
+                         }
+                    ]
+               }
+               var pieOptions     = {
+                    maintainAspectRatio : false,
+                    responsive : true,
+               }
+               //Create pie or douhnut chart
+               // You can switch between pie and douhnut using the method below.
+               var pieChart = new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: pieData,
+                    options: pieOptions
+               })
+          }
+
+
+     });
+
+</script>

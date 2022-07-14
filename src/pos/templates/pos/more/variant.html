@@ -1,0 +1,130 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language_bidi as language_bidi %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <div class="content-header">
+          <div class="container-fluid">
+               <div class="row mb-2">
+                    <div class="col-sm-6">
+                         <h1 class="m-0 text-dark">{% trans "Variants" %}</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb float-sm-right">
+                              <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                              <li class="breadcrumb-item active">{% trans "Variant" %}</li>
+                         </ol>
+                    </div><!-- /.col -->
+               </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+     </div>
+     <!-- /.content-header -->
+
+     <!-- Main content -->
+     <section class="content">
+          <div class="container-fluid">
+
+               <div class="row">
+                    <div class="col-md-6">
+                      <!-- AREA CHART -->
+                      <div class="card card-success">
+                        <div class="card-header">
+                          <h3 class="card-title">{% trans "Variants" %}</h3>
+                        </div>
+                        <div class="card-body">
+                          <div class="chart">
+                            <div id="" style="max-width: 100%;">
+                              <table dir="{% if language_bidi %}rtl{% else %}ltr{% endif %}"  id="example1" class="table table-bordered table-striped">
+                                   <thead>
+                                        <tr>
+                                             <th>{% trans "ID" %}</th>
+                                             <th>{% trans "Name" %}</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody>
+                                        {% for variant in object_list %}
+                                        <tr>
+                                             <td>{% trans "Variant" %}-{{ variant.variant_pk|default:"No ID" }}</td>
+                                             <td>{{ variant.name|default:"No Name" }}</td>
+                                        </tr>
+                                        {% endfor %}
+
+                                   </tbody>
+                                   <tfoot>
+                                        <tr>
+                                             <th>{% trans "ID" %}</th>
+                                             <th>{% trans "Name" %}</th>
+                                        </tr>
+                                   </tfoot>
+                              </table>
+                         </div>
+                          </div>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+                      <!-- /.card -->
+          
+                    </div>
+                    <!-- /.col (LEFT) -->
+                    <div class="col-md-6">
+                      <!-- LINE CHART -->
+                      <div class="card card-info">
+                        <div class="card-header">
+                          <h3 class="card-title">{% trans "Options" %}</h3>
+                        </div>
+                        <div class="card-body">
+                          <div class="chart">
+                              <div id="" style="max-width: 100%;">
+                                   <table dir="{% if language_bidi %}rtl{% else %}ltr{% endif %}"  id="option" class="table table-bordered table-striped">
+                                        <thead>
+                                             <tr>
+                                                  <th>{% trans "ID" %}</th>
+                                                  <th>{% trans "Name" %}</th>
+                                                  <th>{% trans "Variant" %}</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             {% for option in options %}
+                                             <tr>
+                                                  <td>{% trans "Option" %}-{{ option.id|default:"No ID" }}</td>
+                                                  <td>{{ option.option_name|default:"No Option" }}</td>
+                                                  <td>{{ option.variant_object.name|default:"No ID" }}</td>
+                                             </tr>
+                                             {% endfor %}
+     
+                                        </tbody>
+                                        <tfoot>
+                                             <tr>
+                                                  <th>{% trans "ID" %}</th>
+                                                  <th>{% trans "Name" %}</th>
+                                                  <th>{% trans "Variant" %}</th>
+                                             </tr>
+                                        </tfoot>
+                                   </table>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+                      <!-- /.card -->
+          
+                    
+                      <!-- /.card -->
+          
+                    </div>
+                    <!-- /.col (RIGHT) -->
+                  </div>
+                  <!-- /.row -->
+
+          </div><!-- /.container-fluid -->
+     </section>
+     <!-- /.content -->
+</div>
+
+
+{% endblock %}

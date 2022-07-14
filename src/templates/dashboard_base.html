@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8">
+     <meta content='width=device-width, initial-scale=1' name='viewport' />
+     <title>Smart Shop</title>
+     {% include "dashboard_base/css.html" %}
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+     <div class="wrapper">
+          {% include "dashboard_base/navbar.html" %}
+
+          {% include "dashboard_base/django_messages.html" %}
+
+
+          {% block content %}
+          {% endblock %}
+
+
+          {% include "dashboard_base/footer.html" %}
+          {% include "dashboard_base/js.html" %}
+          
+         {% block jquery %}{% endblock %}
+     
+     </div>
+</body>
+
+</html>

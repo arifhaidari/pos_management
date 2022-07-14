@@ -1,0 +1,86 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as language_code %}
+
+
+<!--::footer_part start::-->
+<footer class="footer_part">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-4 col-lg-4">
+                <div class="single_footer_part">
+                    <a href="index.html" class="footer_logo_iner"> <img src="{% static 'img/footer_logo1.png' %}"
+                            alt="#"> </a>
+                    <p style="text-align: center;">{% include "base/paragraph_dictionary.html" with id=8 lang_code=language_code %}</p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-2">
+                <div class="single_footer_part">
+                    <h4 style="text-align: center;">{% trans "About Us" %}</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'contact_us' %}">{% trans "Contact" %}</a></li>
+                        <!-- <li><a href="">{% trans "Marketing Service" %}</a></li>
+                        <li><a href="">{% trans "Customer Service" %}</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-2">
+                <div class="single_footer_part">
+                    <h4 style="text-align: center;">{% trans "Quick Links" %}</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'feature' %}">{% trans "Features" %}</a></li>
+                        <!-- <li><a href="">{% trans "Terms of Service" %}</a></li>
+                        <li><a href="">{% trans "Privacy & Policy" %}</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-2">
+                <div class="single_footer_part">
+                    <h4 style="text-align: center;">{% trans "My Account" %}</h4>
+                    <ul class="list-unstyled">
+                        {% if request.user.is_authenticated and not request.user.admin %}
+                        <li><a href="{% url 'pos:pos_home' %}">{% trans "Dashboard" %}</a></li>
+                        {% else %}
+                        <li><a href="{% url 'accounts:login' %}">{% trans "Login" %}</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 col-lg-2">
+                <div class="single_footer_part">
+                    <h4 style="text-align: center;">{% trans "Resources" %}</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'pricing:pricing_home' %}">{% trans "Pricing" %}</a></li>
+                        <!-- <li><a href="">{% trans "Supply Chain" %}</a></li>
+                        <li><a href="">{% trans "Agencies Relation" %}</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="copyright_text">
+                    <P>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Powered by <a href="http://fsh.af/"
+                            target="_blank">FSH</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </P>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="footer_icon social_icon">
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="single_social_icon"><i class="fa fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fa fa-globe"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--::footer_part end::-->

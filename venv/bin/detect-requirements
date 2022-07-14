@@ -1,0 +1,3 @@
+#!/Users/arifmoazy/Python/pos_management/venv/bin/python3
+from requirements_detector.run import run
+run()

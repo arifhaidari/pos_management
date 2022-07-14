@@ -1,0 +1,144 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language_bidi as language_bidi %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <div class="content-header">
+          <div class="container-fluid">
+               <div class="row mb-2">
+                    <div class="col-sm-6">
+                         <h1 class="m-0 text-dark">{% trans "Product Details" %}</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb float-sm-right">
+                              <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                              <li class="breadcrumb-item"><a href="{% url 'pos:order' %}">{% trans "Products" %}</a></li>
+                              <li class="breadcrumb-item active">{% trans "Product Details" %}</li>
+                         </ol>
+                    </div><!-- /.col -->
+               </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+     </div>
+     <!-- /.content-header -->
+
+     <!-- Main content -->
+     <section class="content">
+          <div class="container-fluid">
+
+               <!-- ///////////////// -->
+
+               <div class="row">
+                    <div class="col-md-3">
+                         <!-- About Me Box -->
+                         <div class="card card-success">
+                              <div class="card-header">
+                                   <h3 class="card-title">{% trans "More Info" %}</h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Name" %}</strong>
+
+                                   <p class="text-muted"> {{ object.name }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Purchase Price" %}</strong>
+
+                                   <p class="text-muted"> {{ object.purchase }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Price" %}</strong>
+
+                                   <p class="text-muted"> {{ object.price }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "In Stock" %}</strong>
+
+                                   <p class="text-muted"> {{ object.quantity }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Weight" %}</strong>
+
+                                   <p class="text-muted"> {{ object.weight }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Stock Status" %}</strong>
+
+                                   <p class="text-muted">
+                                        {% if object.quantity <= 5 and object.quantity != 0 %}
+                                        {% trans "Low of Stock" %}
+                                        {% elif object.quantity == 0 %}
+                                        {% trans "Out of Stock" %}
+                                        {% elif object.quantity > 5 %}
+                                        {% trans "In Stock" %}
+                                        {% endif %}
+                                   </p>
+                              </div>
+                              <!-- /.card-body -->
+                         </div>
+                         <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-9">
+
+                         <div class="card">
+                              <div class="card-header">
+                                   <h3 class="card-title">{% trans "Product Variants" %}</h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                   <table dir="{% if language_bidi %}rtl{% else %}ltr{% endif %}" id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                             <tr>
+                                                  <th>#</th>
+                                                  <th>{% trans "Variant Name" %}</th>
+                                                  <th>{% trans "Option Name" %}</th>
+                                                  <th>{% trans "Extra Price" %}</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             {% for variant in variants %}
+                                             <tr>
+                                                  <td>{{ forloop.counter }}</td>
+                                                  <td>{{ variant.variant_object.name }}</td>
+                                                  <td>{{ variant.variant_option_object.option_name }}</td>
+                                                  <td>{{ variant.price }}</td>
+                                                 
+                                             </tr>
+                                             {% endfor %}
+
+                                        </tbody>
+                                        <tfoot>
+                                             <tr>
+                                                  <th>#</th>
+                                                  <th>{% trans "Variant Name" %}</th>
+                                                  <th>{% trans "Option Name" %}</th>
+                                                  <th>{% trans "Extra Price" %}</th>
+                                             </tr>
+                                        </tfoot>
+                                   </table>
+                              </div>
+                              <!-- /.card-body -->
+                         </div>
+                         <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+               </div>
+               <!-- /.row -->
+
+          </div><!-- /.container-fluid -->
+     </section>
+     <!-- /.content -->
+</div>
+
+
+{% endblock %}

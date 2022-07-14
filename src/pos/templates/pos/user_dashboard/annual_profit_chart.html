@@ -1,0 +1,92 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as language_code %}
+<script>
+     $(document).ready(function () {
+          var endPoint = "/pos/chart/data/"
+          var revenueData = [];
+          var expenseData = [];
+          var profitData = [];
+          var labels = [];
+          var code = "{{ language_code }}"
+          $.ajax({
+               method: "GET",
+               url: endPoint,
+               success: function (data) {
+                    if(code == 'fa' || code == 'ur') {
+                         labels = ['جنوری', 'فبروری', 'مارچ', 'اپریل', 'می', 'جون', 'جولای', 'اگست', 'سپتمبر', 'اکتبر', 'نومبر', 'دسمبر',]
+                    } else {
+                         labels = data.graph_labels
+                    }
+                    revenueData = data.revenue_graph_data
+                    expenseData = data.expense_graph_data
+                    profitData = data.profit_graph_data
+                    setChart()
+
+               },
+               error: function (error_data) {
+                    console.log('error///////////////////'),
+                         console.log(error_data)
+               }
+          })
+
+          function setChart() {
+               var ctx = document.getElementById('revenueProfitExpenseChart').getContext('2d');
+               var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    // type: 'polarArea',
+                    data: {
+                         labels: labels,
+                         datasets: [
+                              {
+                                   label: '{% trans "Net Revenue" %}',
+                                   backgroundColor: 'rgba(60,141,188,0.9)',
+                                   borderColor: 'rgba(60,141,188,0.8)',
+                                   pointRadius: false,
+                                   pointColor: '#3b8bba',
+                                   pointStrokeColor: 'rgba(60,141,188,1)',
+                                   pointHighlightFill: '#fff',
+                                   pointHighlightStroke: 'rgba(60,141,188,1)',
+                                   data: revenueData
+                              },
+                              {
+                                   label: '{% trans "Expenses" %}',
+                                   backgroundColor: 'rgba(210, 214, 222, 1)',
+                                   borderColor: 'rgba(210, 214, 222, 1)',
+                                   pointRadius: false,
+                                   pointColor: 'rgba(210, 214, 222, 1)',
+                                   pointStrokeColor: '#c1c7d1',
+                                   pointHighlightFill: '#fff',
+                                   pointHighlightStroke: 'rgba(220,220,220,1)',
+                                   data: expenseData
+                              },
+                              {
+                                   label: '{% trans "Profit" %}',
+                                   backgroundColor: 'rgba(100, 80, 111, 1)',
+                                   borderColor: 'rgba(210, 214, 222, 1)',
+                                   pointRadius: false,
+                                   pointColor: 'rgba(210, 214, 222, 1)',
+                                   pointStrokeColor: '#00a65a',
+                                   pointHighlightFill: '#fff',
+                                   pointHighlightStroke: 'rgba(220,220,220,1)',
+                                   data: profitData
+                              },
+                         ]
+                    },
+                    options: {
+                         scales: {
+                              yAxes: [{
+                                   ticks: {
+                                        beginAtZero: true
+                                   }
+                              }]
+                         }
+                    }
+               });
+          }
+
+
+     });
+
+</script>
+

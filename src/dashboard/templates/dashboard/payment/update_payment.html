@@ -1,0 +1,54 @@
+{% if request.user.is_authenticated and request.user.admin %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <a href="{% url 'dashboard:list' %}"  ><button type="button" class="close"  aria-hidden="true">&times;</button></a>
+          <h4 class="modal-title">Update payment</h4>
+        </div>
+        <form method="POST">
+             {% csrf_token %}
+        <div class="modal-body">
+          <div class="form-group row">
+               <label for="inputName" class="col-sm-2 col-form-label">Amount</label>
+               <div class="col-sm-10">
+                 <input type="number" name="paid_amount" class="form-control" id="inputName" placeholder="Amount Payable" value="{{ object.paid_amount }}">
+               </div>
+             </div>
+        </div>
+        <div class="modal-footer">
+          <a href="{% url 'dashboard:list' %}"  ><button type="button" class="btn btn-primary">Cancel</button></a>
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+     </form>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<script>
+     $("#myModal").modal('show');
+</script>
+</body>
+</html>
+
+{% endif %}

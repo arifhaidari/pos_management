@@ -1,0 +1,105 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language_bidi as language_bidi %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <div class="content-header">
+          <div class="container-fluid">
+               <div class="row mb-2">
+                    <div class="col-sm-6">
+                         <h1 class="m-0 text-dark">{% trans "Logs" %}</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb float-sm-right">
+                              <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                              <li class="breadcrumb-item active">{% trans "Dashboard" %}</li>
+                         </ol>
+                    </div><!-- /.col -->
+               </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+     </div>
+     <!-- /.content-header -->
+
+     <!-- Main content -->
+     <section class="content">
+          <div class="container-fluid">
+
+               <div class="row">
+                    <div class="col-12">
+
+                         <div class="card">
+                              <div class="card-header">
+                                   <h3 class="card-title">{% trans "Logs" %}</h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                   <table dir="{% if language_bidi %}rtl{% else %}ltr{% endif %}" id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                             <tr>
+                                                  <th>{% trans "Log" %}</th>
+                                                  <th>{% trans "Model" %}</th>
+                                                  <th>{% trans "Detail" %}</th>
+                                                  <th>{% trans "Datetime" %}</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             {% for log in object_list %}
+                                             <tr>
+                                                  <td>
+                                                       {% if log.operation == 'edit_product' %}
+                                                       <a href="{% url 'pos:edited_product_detail' log.log_pk %}">
+                                                            {% trans "Log" %}-#{{ log.log_pk }}
+                                                       </a>
+                                                       {% elif log.operation == 'pay_invoice' %}
+                                                       <a href="{% url 'pos:invoice_detail' log.model_id %}">
+                                                            {% trans "Log" %}-#{{ log.log_pk }}
+                                                       </a>
+                                                       {% elif log.operation == 'complete_invoice' %}
+                                                       <a href="{% url 'pos:order_detail' log.model_id %}">
+                                                            {% trans "Log" %}-#{{ log.log_pk }}
+                                                       </a>
+                                                       {% elif log.operation == 'delete_product' %}
+                                                       <a href="{% url 'pos:deleted_product_detail' log.log_pk %}">
+                                                            {% trans "Log" %}-#{{ log.log_pk }}
+                                                       </a>
+                                                       {% else %}
+                                                       {% trans "Log" %}-#{{ log.log_pk }}
+                                                       {% endif %}
+                                                  </td>
+                                                  <td>{{ log.model }}</td>
+                                                  <td>{{ log.detail }}</td>
+                                                  <td>{{ log.timestamp }}</td>
+                                             </tr>
+                                             {% endfor %}
+
+                                        </tbody>
+                                        <tfoot>
+                                             <tr>
+                                                  <th>{% trans "Log" %}</th>
+                                                  <th>{% trans "Model" %}</th>
+                                                  <th>{% trans "Detail" %}</th>
+                                                  <th>{% trans "Datetime" %}</th>
+                                             </tr>
+                                        </tfoot>
+                                   </table>
+                              </div>
+                              <!-- /.card-body -->
+                         </div>
+                         <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+               </div>
+               <!-- /.row -->
+
+          </div><!-- /.container-fluid -->
+     </section>
+     <!-- /.content -->
+</div>
+
+
+{% endblock %}

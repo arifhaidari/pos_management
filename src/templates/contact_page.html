@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<!-- LANGUAGE_BIDI is used that whether language needs bidirectional or not like for Persian is true and for Englis is false -->
+
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>{% trans "contact us" %}</h2>
+                            <h5> {% trans "home" %}<span></span> {% trans "contact" %}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+  <!-- ================ contact section start ================= -->
+  <section class="contact-section section_padding">
+    <div class="container">
+      <div class="d-none d-sm-block mb-5 pb-4">
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206.8516656205181!2d69.17314828702943!3d34.53417097923382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d16eb976e7a931%3A0x5345e7261e20ca9!2sButcher%20St%2C%20Kabol%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1598335730566!5m2!1sen!2s" width="1200" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-12">
+          <h2 class="contact-title">{% trans "Get in Touch" %}</h2>
+        </div>
+        <div class="col-lg-8">
+          <form class="contact_form" method="POST"> {% csrf_token %}
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+
+                  {{ form.message }}
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  {{ form.name }}
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  {{ form.email }}
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  {{ form.subject }}
+                </div>
+              </div>
+            </div>
+            <input type="submit" value="{% trans 'Save' %}">
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+              <h3>{% trans "Kabul, Shahr Naw." %}</h3>
+              <p>{% trans "Sherpor, St 1st" %}</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+              <h3>+93728333663</h3>
+              <p>Sat to Thu 9am to 5pm</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+              <h3>info@smartshop.services</h3>
+              <p>{% trans "Send us your query anytime!" %}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================ contact section end ================= -->
+
+{% endblock %}
+

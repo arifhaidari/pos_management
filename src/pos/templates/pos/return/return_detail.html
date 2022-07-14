@@ -1,0 +1,273 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language_bidi as language_bidi %}
+<style>
+     .color-palette {
+          height: 35px;
+          line-height: 35px;
+          text-align: right;
+          padding-right: .75rem;
+     }
+
+     .color-palette.disabled {
+          text-align: center;
+          padding-right: 0;
+          display: block;
+     }
+
+     .color-palette-set {
+          margin-bottom: 15px;
+     }
+
+     .color-palette span {
+          display: none;
+          font-size: 12px;
+     }
+
+     .color-palette:hover span {
+          display: block;
+     }
+
+     .color-palette.disabled span {
+          display: block;
+          text-align: left;
+          padding-left: .75rem;
+     }
+
+     .color-palette-box h4 {
+          position: absolute;
+          left: 1.25rem;
+          margin-top: .75rem;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 12px;
+          display: block;
+          z-index: 7;
+     }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <div class="content-header">
+          <div class="container-fluid">
+               <div class="row mb-2">
+                    <div class="col-sm-6">
+                         <h1 class="m-0 text-dark">{% trans "Return Details" %}</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb float-sm-right">
+                              <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                              <li class="breadcrumb-item"><a href="{% url 'pos:monthly_return' %}">{% trans "Returns" %}</a></li>
+                              <li class="breadcrumb-item active">{% trans "Return Detail" %}</li>
+                         </ol>
+                    </div><!-- /.col -->
+               </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+     </div>
+     <!-- /.content-header -->
+
+     <!-- Main content -->
+     <section class="content">
+          <div class="container-fluid">
+
+               <div class="card card-default color-palette-box">
+                    <div class="card-body">
+                         <div class="row">
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center">{% trans "Returned Amount" %}</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-primary color-palette"><span></span></div>
+                                        <div class="bg-primary disabled color-palette">
+                                             <span>{{ object.order_subtotal|add:object.order_discount }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center">{% trans "Charged Amount" %}</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-secondary color-palette"><span></span></div>
+                                        <div class="bg-secondary disabled color-palette">
+                                             <span>{{ object.order_discount }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center bg-navy">{% trans "Returned Subtotal" %}</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-navy color-palette"><span></span></div>
+                                        <div class="bg-navy disabled color-palette">
+                                             <span>{{ object.order_subtotal }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center bg-purple">{% trans "Paid Cash" %}</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-purple color-palette"><span></span></div>
+                                        <div class="bg-purple disabled color-palette">
+                                             <span>{{ object.cash_collected }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center bg-olive">{% trans "Change Due" %}</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-olive color-palette"><span></span></div>
+                                        <div class="bg-olive disabled color-palette">
+                                             <span>{{ object.change_due }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center bg-gray-dark">{% trans "Datetime" %}</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-gray-dark color-palette"><span></span></div>
+                                        <div class="bg-gray-dark disabled color-palette">
+                                             <span>{{ object.timestamp }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                         </div>
+                         <!-- /.row -->
+                    </div>
+               </div>
+
+
+               <!-- ///////////////// -->
+
+               <div class="row">
+                    <div class="col-md-3">
+                         <!-- About Me Box -->
+                         <div class="card card-success">
+                              <div class="card-header">
+                                   <h3 class="card-title">{% trans "More Info" %}</h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Item No" %}</strong>
+
+                                   <p class="text-muted"> {{ object.order_item_no }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Return Amount" %}</strong>
+
+                                   <p class="text-muted"> {{ object.order_subtotal|add:object.order_discount }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Charged Amount" %}</strong>
+
+                                   <p class="text-muted"> {{ object.order_discount }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Returned Subtotal" %}</strong>
+
+                                   <p class="text-muted"> {{ object.order_subtotal }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Paid Cash" %}</strong>
+
+                                   <p class="text-muted"> {{ object.cash_collected }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Change Due" %}</strong>
+
+                                   <p class="text-muted"> {{ object.change_due }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie mr-1"></i> {% trans "Datetime" %}</strong>
+
+                                   <p class="text-muted"> {{ object.timestamp }}</p>
+
+                                   <hr>
+
+                                   <strong><i class="fas fa-chart-pie"></i> {% trans "Session" %}</strong>
+
+                                   <p class="text-muted"> {% trans "Session" %}-#{{ object.session_id }}</p>
+
+
+                              </div>
+                              <!-- /.card-body -->
+                         </div>
+                         <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-9">
+
+                         <div class="card">
+                              <div class="card-header">
+                                   <h3 class="card-title">{% trans "Order Items" %}</h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                   <table dir="{% if language_bidi %}rtl{% else %}ltr{% endif %}" id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                             <tr>
+                                                  <th>{% trans "Name" %}</th>
+                                                  <th>{% trans "Subtotal" %}</th>
+                                                  <th>{% trans "Discount" %}</th>
+                                                  <th>{% trans "Net Total" %}</th>
+                                                  <th>{% trans "Quantity" %}</th>
+                                                  <th>{% trans "Variant(s)" %}</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             {% for product in return_items %}
+                                             <tr>
+                                                  <td>{{ product.product_object.name }}</td>
+                                                  <td>{{ product.product_subtotal|add:product.product_discount }}</td>
+                                                  <td>{{ product.product_discount }}</td>
+                                                  <td>{{ product.product_subtotal }}</td>
+                                                  <td>{{ product.product_quantity }}</td>
+                                                  <td>
+                                                       {% if product.product_object.has_variant %}
+                                                       {% trans "Yes" %} 
+                                                       {% else %}
+                                                       {% trans "No" %} 
+                                                       {% endif %}
+                                                  </td>
+                                             </tr>
+                                             {% endfor %}
+
+                                        </tbody>
+                                        <tfoot>
+                                             <tr>
+                                                  <th>{% trans "Name" %}</th>
+                                                  <th>{% trans "Subtotal" %}</th>
+                                                  <th>{% trans "Discount" %}</th>
+                                                  <th>{% trans "Net Total" %}</th>
+                                                  <th>{% trans "Quantity" %}</th>
+                                                  <th>{% trans "Variant(s)" %}</th>
+                                             </tr>
+                                        </tfoot>
+                                   </table>
+                              </div>
+                              <!-- /.card-body -->
+                         </div>
+                         <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+               </div>
+               <!-- /.row -->
+
+          </div><!-- /.container-fluid -->
+     </section>
+     <!-- /.content -->
+</div>
+
+
+{% endblock %}

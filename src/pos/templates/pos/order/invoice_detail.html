@@ -1,0 +1,295 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+     .color-palette {
+          height: 35px;
+          line-height: 35px;
+          text-align: right;
+          padding-right: .75rem;
+     }
+
+     .color-palette.disabled {
+          text-align: center;
+          padding-right: 0;
+          display: block;
+     }
+
+     .color-palette-set {
+          margin-bottom: 15px;
+     }
+
+     .color-palette span {
+          display: none;
+          font-size: 12px;
+     }
+
+     .color-palette:hover span {
+          display: block;
+     }
+
+     .color-palette.disabled span {
+          display: block;
+          text-align: left;
+          padding-left: .75rem;
+     }
+
+     .color-palette-box h4 {
+          position: absolute;
+          left: 1.25rem;
+          margin-top: .75rem;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 12px;
+          display: block;
+          z-index: 7;
+     }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <div class="content-header">
+          <div class="container-fluid">
+               <div class="row mb-2">
+                    <div class="col-sm-6">
+                         <h1 class="m-0 text-dark">Invoice Details</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb float-sm-right">
+                              <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                              <li class="breadcrumb-item"><a href="{% url 'pos:invoice' %}">Invoices</a></li>
+                              <li class="breadcrumb-item active">Invoice Details</li>
+                         </ol>
+                    </div><!-- /.col -->
+               </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+     </div>
+     <!-- /.content-header -->
+
+     <!-- Main content -->
+     <section class="content">
+          <div class="container-fluid">
+
+               <div class="card card-default color-palette-box">
+                    <div class="card-body">
+                         <div class="row">
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center">Invoice Subtotal</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-primary color-palette"><span></span></div>
+                                        <div class="bg-primary disabled color-palette">
+                                             <span>{{ object.invoice_subtotal|add:object.invoice_discount }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center">Invoice Discount</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-secondary color-palette"><span></span></div>
+                                        <div class="bg-secondary disabled color-palette">
+                                             <span>{{ object.invoice_discount }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center bg-navy">Net Total</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-navy color-palette"><span></span></div>
+                                        <div class="bg-navy disabled color-palette">
+                                             <span>{{ object.invoice_subtotal }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center bg-purple">Paid Amount</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-purple color-palette"><span></span></div>
+                                        <div class="bg-purple disabled color-palette">
+                                             <span>{{ object.invoice_paid_amount }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center bg-olive">Payable Amount</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-olive color-palette"><span></span></div>
+                                        <div class="bg-olive disabled color-palette">
+                                             <span>{{ object.invoice_payable_amount }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-4 col-md-2">
+                                   <h4 class="text-center bg-gray-dark">Due Date</h4>
+
+                                   <div class="color-palette-set">
+                                        <div class="bg-gray-dark color-palette"><span></span></div>
+                                        <div class="bg-gray-dark disabled color-palette">
+                                             <span>{{ object.invoice_due_date }}</span></div>
+                                   </div>
+                              </div>
+                              <!-- /.col -->
+                         </div>
+                         <!-- /.row -->
+                    </div>
+               </div>
+
+
+               <!-- ///////////////// -->
+
+               <div class="row">
+                    <div class="col-12">
+          
+          
+                      <!-- Main content -->
+                      <div class="invoice p-3 mb-3">
+                        <!-- title row -->
+                        <div class="row">
+                          <div class="col-12">
+                            <h4>
+                              <i class="fas fa-globe"></i> {{ user_info.business }}
+                              <small class="float-right">Due Date: {{ object.invoice_due_date }}</small>
+                            </h4>
+                          </div>
+                          <!-- /.col -->
+                        </div>
+                        <!-- info row -->
+                        <div class="row invoice-info">
+                          <div class="col-sm-4 invoice-col">
+                            From
+                            <address>
+                              <strong>{{ user_info.full_name }}</strong><br>
+                              {{ user_info.address }}<br>
+                              {{ user_info.phone }}<br>
+                              {{ user_info.email|default:"example@domain.com" }}
+                            </address>
+                          </div>
+                          <!-- /.col -->
+                          <div class="col-sm-4 invoice-col">
+                            To
+                            <address>
+                              <strong>{{ object.customer_name }}</strong><br>
+                              {{ object.customer_address }}<br>
+                              {{ object.customer_phone }}<br>
+                              {{ object.customer_email }}
+                            </address>
+                          </div>
+                          <!-- /.col -->
+                          <div class="col-sm-4 invoice-col">
+                            <b>Invoice Terms</b><br>
+                            <br>
+                            <b>Invoice-#:</b> {{ object.invoice_number }}<br>
+                            <b>Issue Date:</b> {{ object.invoice_issue_date }}<br>
+                            <b>Due Date:</b> {{ object.invoice_due_date }}
+                          </div>
+                          <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+          
+                        <!-- Table row -->
+                        <div class="row">
+                          <div class="col-12 table-responsive">
+                            <table class="table table-striped">
+                              <thead>
+                              <tr>
+                                <th>Qty</th>
+                                <th>Description</th>
+                                <th>Unit Price</th>
+                                <th>Discount</th>
+                                <th>Line Total</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                                {% for item in invoice_items %}
+                              <tr>
+                                <td>{{ item.product_quantity }}</td>
+                                <td>{{ item.product_object.name }}</td>
+                                <td>{{ item.product_object.price }}</td>
+                                <td>{{ item.product_discount }}</td>
+                                <td>{{ item.product_subtotal }}</td>
+                              </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+          
+                        <div class="row">
+                          <!-- accepted payments column -->
+                          <div class="col-6">
+                            <p class="lead">Payment Methods:</p>
+                            <img src="{% static 'admin_lte/dist/img/credit/visa.png' %}" alt="Visa">
+                            <img src="{% static 'admin_lte/dist/img/credit/mastercard.png' %}" alt="Mastercard">
+                            <img src="{% static 'admin_lte/dist/img/credit/american-express.png' %}" alt="American Express">
+                            <img src="{% static 'admin_lte/dist/img/credit/paypal2.png' %}" alt="Paypal">
+          
+                            <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+                              In case of payment by online platforms, you can use any of the above online 
+                              platforms to get your invoice paid by due date. Contact your customer by provided contacts 
+                              and negotiate about payment mehtod
+                            </p>
+                          </div>
+                          <!-- /.col -->
+                          <div class="col-6">
+                            <p class="lead">Invoice In Brief</p>
+          
+                            <div class="table-responsive">
+                              <table class="table">
+                                <tr>
+                                  <th style="width:50%">Subtotal:</th>
+                                  <td>{{ object.invoice_subtotal|add:object.invoice_discount }}</td>
+                                </tr>
+                                <tr>
+                                  <th>Discount:</th>
+                                  <td>{{ object.invoice_discount }}</td>
+                                </tr>
+                                <tr>
+                                  <th>Net Total:</th>
+                                  <td>{{ object.invoice_subtotal }}</td>
+                                </tr>
+                                <tr>
+                                  <th>Paid Amount:</th>
+                                  <td>{{ object.invoice_paid_amount }}</td>
+                                </tr>
+                                <tr>
+                                  <th>Payable Amount:</th>
+                                  <td>{{ object.invoice_payable_amount }}</td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                          <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+          
+                        <!-- this row will not appear when printing -->
+                        <div class="row no-print">
+                          <div class="col-12">
+                            <a href="#" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                            <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+                              Payment
+                            </button>
+                            <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                              <i class="fas fa-download"></i> Generate PDF
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.invoice -->
+                    </div><!-- /.col -->
+                  </div><!-- /.row -->
+
+          </div><!-- /.container-fluid -->
+     </section>
+     <!-- /.content -->
+</div>
+
+
+{% endblock %}

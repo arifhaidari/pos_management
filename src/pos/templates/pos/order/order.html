@@ -1,0 +1,102 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language_bidi as language_bidi %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <div class="content-header">
+          <div class="container-fluid">
+               <div class="row mb-2">
+                    <div class="col-sm-6">
+                         <h1 class="m-0 text-dark">{% trans "Orders" %}</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                         <ol class="breadcrumb float-sm-right">
+                              <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                              <li class="breadcrumb-item active">{% trans "Dashboard" %}</li>
+                         </ol>
+                    </div><!-- /.col -->
+               </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+     </div>
+     <!-- /.content-header -->
+
+     <!-- Main content -->
+     <section class="content">
+          <div class="container-fluid">
+
+               <div class="row">
+                    <div class="col-12">
+
+                         <div class="card">
+                              <div class="card-header">
+                                   <h3 class="card-title">{% trans "All Orders Of Today" %}</h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                   <table dir="{% if language_bidi %}rtl{% else %}ltr{% endif %}" id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                             <tr>
+                                                  <th>{% trans "Order" %}</th>
+                                                  <th>{% trans "Subtotal" %}</th>
+                                                  <th>{% trans "Discount" %}</th>
+                                                  <th>{% trans "Net Total" %}</th>
+                                                  <th>{% trans "Item No" %}</th>
+                                                  <th>{% trans "Cash Collected" %}</th>
+                                                  <th>{% trans "Change Due" %}</th>
+                                                  <th>{% trans "Date" %}</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             {% for order in object_list %}
+
+                                             <tr>
+                                                  <td>
+                                                       <a href="{{ order.get_absolute_url }}">
+                                                            {% trans "Order" %}-#{{ order.pos_order_pk }}
+                                                       </a>
+                                                  </td>
+                                                  <td>{{ order.order_subtotal|add:order.order_discount }}</td>
+                                                  <td>{{ order.order_discount }}</td>
+                                                  <td>{{ order.order_subtotal }}</td>
+                                                  <td>{{ order.order_item_no }}</td>
+                                                  <td>{{ order.cash_collected }}</td>
+                                                  <td>{{ order.change_due }}</td>
+                                                  <td>{{ order.timestamp }}</td>
+                                             </tr>
+                                             {% endfor %}
+
+                                        </tbody>
+                                        <tfoot>
+                                             <tr>
+                                                  <th>{% trans "Order" %}</th>
+                                                  <th>{% trans "Subtotal" %}</th>
+                                                  <th>{% trans "Discount" %}</th>
+                                                  <th>{% trans "Net Total" %}</th>
+                                                  <th>{% trans "Item No" %}</th>
+                                                  <th>{% trans "Cash Collected" %}</th>
+                                                  <th>{% trans "Change Due" %}</th>
+                                                  <th>{% trans "Date" %}</th>
+                                             </tr>
+                                        </tfoot>
+                                   </table>
+                              </div>
+                              <!-- /.card-body -->
+                         </div>
+                         <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+               </div>
+               <!-- /.row -->
+
+          </div><!-- /.container-fluid -->
+     </section>
+     <!-- /.content -->
+</div>
+
+
+{% endblock %}

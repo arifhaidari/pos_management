@@ -1,0 +1,134 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% if request.user.is_authenticated and request.user.admin %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Users</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{% url 'dashboard:dashboard_menu' %}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Users</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <!-- Default box -->
+    <div class="card card-solid">
+      <div class="card-body pb-0">
+        <div class="row d-flex align-items-stretch">
+          <!-- start card -->
+          {% for client in object_list %}
+          <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+            <div class="card bg-light">
+              <div class="card-header text-muted border-bottom-0">
+                {{ client.business }}
+              </div>
+              <div class="card-body pt-0">
+                <div class="row">
+                  <div class="col-7">
+                    <h2 class="lead"><b>{{ client.full_name }}</b></h2>
+                    <span class="text-muted text-sm"><b>Active: </b> {% if client.is_active %} Yes {% else %} No {% endif %} </span> <br>
+                    <span class="text-muted text-sm"><b>Start Contract: </b> {{ client.start_contract_at }} </span> <br>
+                    <p class="text-muted text-sm"><b>End Contract: </b> {{ client.end_contract_at }} </p> 
+                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                      <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: {{ client.address }}</li>
+                      <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: {{ client.phone }}</li>
+                    </ul>
+                  </div>
+                  <div class="col-5 text-center">
+                    <img src="{% static 'admin_lte/dist/img/avatar5.png' %}" alt="user-avatar" class="img-circle img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="text-right">
+                  {% if client.is_active %}
+                  <a href="{% url 'dashboard:activate_client' id=client.id %}" class="btn btn-sm bg-secondary">
+                    <i class="fas fa-power-off"></i> Deactivate
+                  </a>
+                  {% else %}
+                  <a href="{% url 'dashboard:activate_client' id=client.id %}" class="btn btn-sm bg-info">
+                    <i class="fas fa-check"></i> Activate
+                  </a>
+                  {% endif %}
+
+                  <a href="{% url 'dashboard:delete' id=client.id %}" class="btn btn-sm bg-danger">
+                    <i class="fas fa-trash"></i> Delete
+                  </a>
+                  <a href="{% url 'dashboard:update' id=client.id %}" class="btn btn-sm btn-primary">
+                    <i class="fas fa-edit"></i> Edit
+                  </a>
+                  <a href="{{ client.get_absolute_url }}" class="btn btn-sm btn-outline-primary">
+                    <i class="fas fa-user"></i> View Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div> 
+          {% endfor %}
+          <!-- end of card -->
+        </div>
+      </div>
+      <!-- /.card-body -->
+
+
+    <div class="card-footer">
+      <nav aria-label="Contacts Page Navigation">
+        <ul class="pagination justify-content-center m-0">
+          <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1" class="btn btn-sm bg-primary">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-sm bg-primary">previous</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="btn btn-sm bg-primary">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-sm bg-primary">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+        </ul>
+      </nav>
+    </div>
+      <!-- <div class="card-footer">
+        <nav aria-label="Contacts Page Navigation">
+          <ul class="pagination justify-content-center m-0">
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+          </ul>
+        </nav>
+      </div> -->
+      <!-- /.card-footer -->
+    </div>
+    <!-- /.card -->
+
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endif %}
+
+{% endblock %}

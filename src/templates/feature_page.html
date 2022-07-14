@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language as language_code %}
+<!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>{% trans "Our Features" %}</h2>
+                            <h5>{% trans "home" %} <span></span> {% trans "feature" %}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!--::use sasu part end::-->
+    <section class="use_sasu padding_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <img src="{% static 'img/icon/feature_icon_3.png' %}" alt="">
+                            <h4 style="text-align: center;">{% trans "Reports" %}</h4>
+                            <p style="text-align: center;">{% include "base/paragraph_dictionary.html" with id=3 lang_code=language_code %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <img src="{% static 'img/icon/feature_icon_1.png' %}" alt="">
+                            <h4 style="text-align: center;">{% trans "Backup" %}</h4>
+                            <p style="text-align: center;">{% include "base/paragraph_dictionary.html" with id=3331 lang_code=language_code %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_feature">
+                        <div class="single_feature_part">
+                            <img src="{% static 'img/icon/feature_icon_2.png' %}" alt="">
+                            <h4 style="text-align: center;">{% trans "Management" %}</h4>
+                            <p style="text-align: center;">{% include "base/paragraph_dictionary.html" with id=3332 lang_code=language_code %} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'img/animate_icon/Ellipse_1.png' %}" alt="" class="feature_icon_1 custom-animation1">
+    </section>
+    <!--::use sasu part end::-->
+
+    <!--::about_us part start::-->
+    <section class="about_us section_padding">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-6 col-lg-5">
+                    <div class="about_us_text">
+                        <img src="{% static 'img/icon/Icon_1.png' %}" alt="">
+                        <h2>{% trans "How POS Enhance Your Business Efficiency" %}</h2>
+                        <p>{% include "base/paragraph_dictionary.html" with id=4 lang_code=language_code %}</p>
+                        <!-- <a href="#" class="btn_2">{% trans "learn more" %}</a> -->
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="learning_img">
+                        <img src="{% static 'img/about_img.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'img/animate_icon/Ellipse_4.png' %}" alt="" class="feature_icon_1 custom-animation1">
+    </section>
+    <!--::about_us part end::-->
+
+    <!--::about_us part start::-->
+    <section class="about_us right_time">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-6 col-lg-6">
+                    <div class="learning_img">
+                        <img src="{% static 'img/about_img_2.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="about_us_text">
+                        <img src="{% static 'img/icon/Icon_2.png' %}" alt="">
+                        <h2>{% trans "Utilize Features Of POS In An Efficient Way" %} </h2>
+                        <p>{% include "base/paragraph_dictionary.html" with id=5 lang_code=language_code %}</p>
+                        <!-- <a href="#" class="btn_2">{% trans "learn more" %}</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'img/animate_icon/Ellipse_5.png' %}" alt="" class="feature_icon_2 custom-animation2">
+    </section>
+    <!--::about_us part end::-->
+
+    {% include "base/news_letter.html" %}
+
+
+{% endblock %}
+

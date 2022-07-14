@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% get_current_language as language_code %}
+{% get_current_language_bidi as language_bidi %}
+<!--::banner part start::-->
+<section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-5">
+                <div class="banner_img d-none d-lg-block">
+                    <img src="{% static 'img/banner_img.png' %}" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="banner_text">
+                    <div class="banner_text_iner text-center">
+                        <h1 style="text-align: center;">{% trans "Automate & Boost Your Business" %}</h1>
+                        <p style="text-align: center;">
+                            {% include "base/paragraph_dictionary.html" with id=1 lang_code=language_code %}</p>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.pos.smartshopservices"
+                            target="_blank" class="download-button"><i class="fa fa-play"></i>Get
+                            It On <span>Google Play</span></a>
+                        <a href="https://apps.apple.com/pk/app/smart-shop-services/id1531795610" target="_blank"
+                            class="download-button"><i class="fa fa-apple"></i>Get It On <span>App Store</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'img/animate_icon/Ellipse_7.png' %}" alt="" class="feature_icon_1 custom-animation1">
+    <img src="{% static 'img/animate_icon/Ellipse_8.png' %}" alt="" class="feature_icon_2 custom-animation2">
+    <img src="{% static 'img/animate_icon/Ellipse_1.png' %}" alt="" class="feature_icon_3 custom-animation3">
+    <img src="{% static 'img/animate_icon/Ellipse_2.png' %}" alt="" class="feature_icon_4 custom-animation4">
+    <img src="{% static 'img/animate_icon/Ellipse_3.png' %}" alt="" class="feature_icon_5 custom-animation5">
+    <img src="{% static 'img/animate_icon/Ellipse_4.png' %}" alt="" class="feature_icon_6 custom-animation6">
+</section>
+<!--::banner part start::-->
+
+
+<!--
+        Feature start (the watch template)
+        ==================== -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="heading">
+                    <h2>{% trans "Our Core Features" %}</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-40 text-center text-md-left">
+                    <h4 class="font-weight-bold mb-2"><i class="fa fa-bar-chart-o"></i> {% trans "Analytics Report" %}
+                    </h4>
+                    <p>{% include "base/paragraph_dictionary.html" with id=15 lang_code=language_code %}
+                    </p>
+                </div>
+                <div class="mb-40 text-center text-md-left">
+                    <h4 class="font-weight-bold mb-2"><i class="fa fa-barcode"></i> {% trans "Barcode & QR" %}</h4>
+                    <p>{% include "base/paragraph_dictionary.html" with id=16 lang_code=language_code %}
+                    </p>
+                </div>
+                <div class="mb-40 text-center text-md-left">
+                    <h4 class="font-weight-bold mb-2"><i class="fa fa-sticky-note"></i>
+                        {% trans "Receipt & Label Printing" %}</h4>
+                    <p>{% include "base/paragraph_dictionary.html" with id=17 lang_code=language_code %}
+                    </p>
+                </div>
+                <div class="mb-40 text-center text-md-left">
+                    <h4 class="font-weight-bold mb-2"><i class="fa fa-line-chart"></i> {% trans "Track Inventory" %}
+                    </h4>
+                    <p>{% include "base/paragraph_dictionary.html" with id=18 lang_code=language_code %}
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center align-self-center mb-4 mb-md-0">
+                <img class="img-fluid" src="{% static 'img/core_feature4.png' %}" alt="">
+            </div>
+            <div class="col-md-4">
+                <div class="mb-40 text-center text-md-left">
+                    <h4 class="font-weight-bold mb-2"><i class="fa fa-cart-plus"></i> {% trans "Orders & Invoicing" %}
+                    </h4>
+                    <p>{% include "base/paragraph_dictionary.html" with id=19 lang_code=language_code %}
+                    </p>
+                </div>
+                <div class="mb-40 text-center text-md-left">
+                    <h4 class="font-weight-bold mb-2"><i class="fa fa-globe"></i> {% trans "Manage Remotely" %}</h4>
+                    <p>{% include "base/paragraph_dictionary.html" with id=20 lang_code=language_code %}
+                    </p>
+                </div>
+                <div class="mb-40 text-center text-md-left">
+                    <h4 class="font-weight-bold mb-2"><i class="fa fa-bank"></i> {% trans "Financial Control" %}</h4>
+                    <p>{% include "base/paragraph_dictionary.html" with id=21 lang_code=language_code %}
+                    </p>
+                </div>
+                <div class="mb-40 text-center text-md-left">
+                    <h4 class="font-weight-bold mb-2"><i class="fa fa-database"></i> {% trans "Backup & Web Panel" %}
+                    </h4>
+                    <p>{% include "base/paragraph_dictionary.html" with id=22 lang_code=language_code %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div><!-- .container close -->
+</section><!-- #service close -->
+
+<div class="section light-bg" id="gallery">
+    <div class="container">
+        <div class="section-title">
+            <small>{% trans "GALLERY" %}</small>
+            <h3>{% trans "App Screenshots" %}</h3>
+        </div>
+
+        <div class="img-gallery owl-carousel owl-theme">
+            <img src="{% static 'img/screenshot/01.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/02.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/03.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/04.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/05.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/06.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/07.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/08.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/09.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/10.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/11.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/12.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/13.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/14.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/15.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/16.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/17.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/18.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/19.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/20.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/21.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/22.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/23.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/24.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/25.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/26.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/27.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/28.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/29.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/30.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/31.png' %}" alt="image">
+            <img src="{% static 'img/screenshot/32.png' %}" alt="image">
+        </div>
+
+    </div>
+
+</div>
+<!-- // end .section -->
+
+
+<!--::about_us part start::-->
+<section class="review_part padding_bottom">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-6 col-lg-6">
+                <div class="review_img">
+                    <img src="{% static 'img/review_bg.png' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-5">
+                <div class="review_slider owl-carousel">
+                    <div class="review_part_text">
+                        <h2>{% trans "Overcome Barriers And First Time In Afghanistan" %}</h2>
+                        <p>{% include "base/paragraph_dictionary.html" with id=2222 lang_code=language_code %}</p>
+                        <h3>{% trans "Naqibullah Sahil," %} <span>{% trans "CEO of FSH" %}</span> </h3>
+                    </div>
+                    <div class="review_part_text">
+                        <h2>{% trans "More Than Just A Regular Point Of Sale" %}</h2>
+                        <p>{% include "base/paragraph_dictionary.html" with id=2221 lang_code=language_code %}</p>
+                        <h3>{% trans "Ahmed Shah," %} <span>{% trans "Project Manager" %}</span> </h3>
+                    </div>
+                    <div class="review_part_text">
+                        <h2>{% trans "Elegant Design Improves User Experience" %}</h2>
+                        <p>{% include "base/paragraph_dictionary.html" with id=2 lang_code=language_code %}</p>
+                        <h3>{% trans "Arif Moazy," %} <span>{% trans "Full Stack Developer" %}</span> </h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'img/animate_icon/Ellipse_4.png' %}" alt="" class="feature_icon_2 custom-animation2">
+</section>
+<!--::about_us part end::-->
+
+{% include "base/news_letter.html" %}
+
+
+{% endblock %}

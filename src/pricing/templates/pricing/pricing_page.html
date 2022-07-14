@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+{% get_current_language as language_code %}
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>{% trans "Pricing Plan" %}</h2>
+                            <h5>{% trans "home" %} <span></span> {% trans "Pricing" %}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!--::pricing part start::-->
+    <section class="pricing_part section_padding home_page_pricing">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_tittle text-center">
+                        <h2>{% trans "Simple Pricing" %}</h2>
+                        <p style="text-align: center;">{% include "base/paragraph_dictionary.html" with id=6 lang_code=language_code %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_pricing_part">
+                        <img src="{% static 'img/icon/pricing_icon_1.png' %}" alt="">
+                        <p style="text-align: center;">{% trans "Trial Version" %}</p>
+                        <h3 style="text-align: center;">{% trans "7 Days Only" %} <span style="text-align: center;">({% trans "Free" %})</span></h3>
+                        <ul>
+                            <li>{% trans "No Backup Service" %}</li>
+                            <li>{% trans "Analytics" %}</li>
+                            <li>{% trans "Point Of Sale" %}</li>
+                            <li>{% trans "No Online Reporting" %}</li>
+                            <li>{% trans "Barcode & QR code" %}</li>
+                            <li>{% trans "No Support" %}</li>
+                        </ul>
+                        <a href="" data-toggle="modal" class="pricing_btn">{% trans "Download" %}</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_pricing_part">
+                        <img src="{% static 'img/icon/pricing_icon_2.png' %}" alt="">
+                        <p style="text-align: center;">{% trans "Business" %}</p>
+                        <h3>AFN 3000 <span>/ 3 mo</span></h3>
+                        <ul>
+                            <li>{% trans "Backup Service" %}</li>
+                            <li>{% trans "Analytics" %}</li>
+                            <li>{% trans "Point Of Sale" %}</li>
+                            <li>{% trans "Online Reporting" %}</li>
+                            <li>{% trans "Barcode & QR code" %}</li>
+                            <li>{% trans "24/7 Support" %}</li>
+                        </ul>
+                        <a href="" data-toggle="modal" class="pricing_btn">{% trans "Download" %}</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_pricing_part">
+                        <img src="{% static 'img/icon/pricing_icon_3.png' %}" alt="">
+                        <p style="text-align: center;">{% trans "Premium" %}</p>
+                        <h3>AFN 5000 <span>/ 6 mo</span></h3>
+                        <ul>
+                            <li>{% trans "Backup Service" %}</li>
+                            <li>{% trans "Analytics" %}</li>
+                            <li>{% trans "Point Of Sale" %}</li>
+                            <li>{% trans "Online Reporting" %}</li>
+                            <li>{% trans "Barcode & QR code" %}</li>
+                            <li>{% trans "24/7 Support" %}</li>
+                        </ul>
+                        <a href="" data-toggle="modal" class="pricing_btn">{% trans "Download" %}</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_pricing_part">
+                        <img src="{% static 'img/icon/pricing_icon_4.png' %}" alt="">
+                        <p style="text-align: center;">{% trans "Ultimate" %}</p>
+                        <h3>AFN 9000 <span>/ 12 mo</span></h3>
+                        <ul>
+                            <li>{% trans "Backup Service" %}</li>
+                            <li>{% trans "Analytics" %}</li>
+                            <li>{% trans "Point Of Sale" %}</li>
+                            <li>{% trans "Online Reporting" %}</li>
+                            <li>{% trans "Barcode & QR code" %}</li>
+                            <li>{% trans "24/7 Support" %}</li>
+                        </ul>
+                        <a href="" data-toggle="modal" class="pricing_btn">{% trans "Download" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'img/animate_icon/Ellipse_2.png' %}" alt="" class="feature_icon_2 custom-animation2">
+    </section>
+    <!--::pricing part end::-->
+
+    <!--::accordion part start::-->
+    <section class="accordion_part padding_bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_tittle text-center">
+                        <h2>{% trans "Frequently Ask Question" %}</h2>
+                        <p style="text-align: center;">{% include "base/paragraph_dictionary.html" with id=7 lang_code=language_code %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 style="text-align: center;" class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        {% include "base/paragraph_dictionary.html" with id=9 lang_code=language_code %}
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                {% include "base/paragraph_dictionary.html" with id=10 lang_code=language_code %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 style="text-align: center;" class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        {% include "base/paragraph_dictionary.html" with id=11 lang_code=language_code %}
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    {% include "base/paragraph_dictionary.html" with id=12 lang_code=language_code %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 style="text-align: center;" class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        {% include "base/paragraph_dictionary.html" with id=13 lang_code=language_code %}
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    {% include "base/paragraph_dictionary.html" with id=14 lang_code=language_code %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--::accordion part end::-->
+
+
+<!--snippets included-->
+<!-- {% include 'pricing/snippets/access_code_modal.html' %} -->
+
+
+
+{% endblock %}
+

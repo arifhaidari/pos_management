@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: requirements-detector
+Version: 0.7
+Summary: Python tool to find and list requirements of a Python project
+Home-page: https://github.com/landscapeio/requirements-detector
+Author: landscape.io
+Author-email: code@landscape.io
+License: MIT
+Description: UNKNOWN
+Keywords: python requirements detector
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: Unix
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
