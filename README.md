@@ -4,7 +4,7 @@
 
 **Smart Shop** is a comprehensive Point of Sale (POS) system tailored for small and medium-sized businesses. This web-app is point of a big project where two more mobile applications are also involved. Developed using Django for the backend and a combination of HTML, CSS, JavaScript, and Bootstrap for the frontend, Smart Shop offers an intuitive and powerful solution for managing business transactions, tracking inventory, and generating insightful analytics. Initially deployed in Kabul, Afghanistan, this application has proven to be an affordable and efficient alternative for businesses that require modern POS functionalities without the heavy investment in expensive systems.
 
-![Smart Shop Brochure](Banner.png)
+![Banner](Banner.png)
 
 ## Key Features
 
