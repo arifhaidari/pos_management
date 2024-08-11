@@ -3,3 +3,33 @@
 .idea/
 *.DS_Store
 /venv/
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Ignore virtual environments
+venv/
+the_env/
+.env/
+
+# Ignore Django migrations
+**/migrations/
+
+# Ignore SQLite database
+db.sqlite3
+*.sqlite3
+.DS_Store/
+
+# Ignore Django settings if they contain sensitive information
+settings.py
+
+# Ignore static and media files (if they are generated)
+static_cdn/
+media/
+
+# Ignore IDE configurations (e.g., VSCode, PyCharm)
+.vscode/
+.idea/
+.github/

@@ -20,7 +20,7 @@ class AuthAPIView(APIView):
      permission_classes            = [permissions.AllowAny]
      def post(self, request, *args, **kwargs):
           if request.user.is_authenticated:
-               return Response({"detail": "you are already logged in bro"}, status=400)
+               return Response({"detail": "you are already logged in"}, status=400)
           data = request.data
           username = data.get("phone")
           password = data.get("password")
