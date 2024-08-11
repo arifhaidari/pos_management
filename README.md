@@ -4,20 +4,7 @@
 
 **Smart Shop** is a comprehensive Point of Sale (POS) system tailored for small and medium-sized businesses. This web-app is point of a big project where two more mobile applications are also involved. Developed using Django for the backend and a combination of HTML, CSS, JavaScript, and Bootstrap for the frontend, Smart Shop offers an intuitive and powerful solution for managing business transactions, tracking inventory, and generating insightful analytics. Initially deployed in Kabul, Afghanistan, this application has proven to be an affordable and efficient alternative for businesses that require modern POS functionalities without the heavy investment in expensive systems.
 
-## Additional Resources
-
-### 1. Brochure
-
-![Smart Shop Brochure](Smart_Shop_Brochure.jpg)
-
-### 2. Promotional Video
-
-[![Watch the Promotional Video](https://www.youtube.com/watch?v=CGohh8mu5r8/0.jpg)](https://www.youtube.com/watch?v=CGohh8mu5r8)
-
-### 3. Tutorial Playlist
-
-A comprehensive playlist of tutorials and user manuals is available to help you get the most out of Smart Shop.
-[Watch the Tutorial Playlist](https://www.youtube.com/watch?v=OcSPNzoeV48&list=PLzZJPW96W8VN9rCsCsJ0Urm8uKwSTuHll)
+![Smart Shop Brochure](Banner.png)
 
 ## Key Features
 
@@ -62,6 +49,21 @@ A comprehensive playlist of tutorials and user manuals is available to help you 
 
 - **Category and Variant Tracking**: Manage inventory by categories and variants for all products.
 - **Stock Monitoring**: Keep track of stock levels, with real-time notifications for low stock conditions.
+
+## Additional Resources
+
+### 1. Brochure
+
+![Smart Shop Brochure](Smart_Shop_Brochure.jpg)
+
+### 2. Promotional Video
+
+[![Watch the Promotional Video](https://www.youtube.com/watch?v=CGohh8mu5r8/0.jpg)](https://www.youtube.com/watch?v=CGohh8mu5r8)
+
+### 3. Tutorial Playlist
+
+A comprehensive playlist of tutorials and user manuals is available to help you get the most out of Smart Shop.
+[Watch the Tutorial Playlist](https://www.youtube.com/watch?v=OcSPNzoeV48&list=PLzZJPW96W8VN9rCsCsJ0Urm8uKwSTuHll)
 
 ## Technical Stack
 
