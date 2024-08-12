@@ -57,7 +57,7 @@ For the complete Smart Shop experience, including the Mobile Apps (Android & iOS
 
 ### 1. Brochure
 
-![Smart Shop Brochure](Smart_Shop_Brochure.jpg)
+![Smart Shop Brochure](smartshop_brochure.jpg)
 
 ### 2. Promotional Video
 
